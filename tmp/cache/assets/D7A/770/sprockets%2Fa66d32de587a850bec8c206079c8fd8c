@@ -1,17 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.5020304:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%9a49fdadd484a28b4550c4e734ecd635I"logical_path;
-FI"images/arrows.png;
-TI"pathname;
-FI".$root/app/assets/images/images/arrows.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"824;
-FI"digest;
-F"%00ca4e89ea5179a7efb1480e4127073fI"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

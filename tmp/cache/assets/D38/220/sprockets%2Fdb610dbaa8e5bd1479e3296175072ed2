@@ -1,18 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1733112:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%4967d779995d9c1b85afe51ac2c30020I"logical_path;
-FI"pb/header-glow.png;
-TI"pathname;
-FI"/$root/app/assets/images/pb/header-glow.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"
-36446;
-FI"digest;
-F"%21eddf83e62166cddfe187b4c7912ab6I"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

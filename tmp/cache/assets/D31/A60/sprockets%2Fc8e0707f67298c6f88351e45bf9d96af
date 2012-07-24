@@ -1,23 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.7908788:@value{	I"length:EFiBI"digest;
-F"%4f6fa1981c0815b1004be823aa49aa02I"source;
-FI"B(function() {
-
-  $(function() {
-    $("#media-btn").bind('click', function() {
-      $("#user-page-wall-post").hide();
-      $("#user-page-media").slideDown('slow');
-      $("#media-btn").addClass('user-page-selected');
-      return $("#wall-btn").removeClass('user-page-selected');
-    });
-    return $("#wall-btn").bind('click', function() {
-      $("#user-page-wall-post").slideDown('slow');
-      $("#user-page-media").hide();
-      $("#wall-btn").addClass('user-page-selected');
-      return $("#media-btn").removeClass('user-page-selected');
-    });
-  });
-
-}).call(this);
-;
-FI"_version;
-F"%c25b64e17ba3a0233250c564b1ff8724

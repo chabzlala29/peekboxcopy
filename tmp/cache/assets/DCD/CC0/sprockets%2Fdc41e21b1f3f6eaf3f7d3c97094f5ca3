@@ -1,17 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.12805:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%7cb9a495fa49933bc7544fe2e326f0b6I"logical_path;
-FI"pb/menu-bg.png;
-TI"pathname;
-FI"+$root/app/assets/images/pb/menu-bg.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"	2835;
-FI"digest;
-F"%4f80a7adca5e1fb848624a4575016b41I"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

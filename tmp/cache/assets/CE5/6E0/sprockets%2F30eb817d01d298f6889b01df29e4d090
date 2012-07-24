@@ -1,17 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.2000067:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%df154b7ef49909cf644a065d1413b797I"logical_path;
-FI"pb/twitter_32.png;
-TI"pathname;
-FI".$root/app/assets/images/pb/twitter_32.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"	2313;
-FI"digest;
-F"%940a99feaa95147884ed95b65411ea86I"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

@@ -1,17 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1370883:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%da554fe129fe8d9dd7c3e1376340ba2eI"logical_path;
-FI"pb/prev-arrow.png;
-TI"pathname;
-FI".$root/app/assets/images/pb/prev-arrow.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"	1043;
-FI"digest;
-F"%2bb503e7c74aa7b369b26ed44dbbc6b9I"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

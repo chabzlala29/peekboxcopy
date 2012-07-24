@@ -1,17 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1590383:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%62b459c010b27aaa55199582c80b17d3I"logical_path;
-FI"pb/twitter-border.png;
-TI"pathname;
-FI"2$root/app/assets/images/pb/twitter-border.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"117;
-FI"digest;
-F"%7c6a5f899c937d03f7b0e01a2a97c0deI"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

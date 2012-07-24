@@ -1,17 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1641357:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%c8d41c0b0585a992952198548026568aI"logical_path;
-FI"pb/bird.png;
-TI"pathname;
-FI"($root/app/assets/images/pb/bird.png;
-FI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2012-07-16T17:25:54+08:00;
-FI"length;
-FI"	1833;
-FI"digest;
-F"%0d29f9e2ab13f9081ef0649bd68995caI"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

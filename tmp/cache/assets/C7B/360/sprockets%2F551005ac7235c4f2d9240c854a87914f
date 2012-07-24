@@ -1,12 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.7870803:@value{	I"length:EFifI"digest;
-F"%69517f2f7f4052f3cc1cd21c60079a6cI"source;
-FI"f(function() {
-
-  jQuery(function() {
-    return $("#slider").nivoSlider();
-  });
-
-}).call(this);
-;
-FI"_version;
-F"%218f6117cff8ba80c02fc7c5de2d6e5d
