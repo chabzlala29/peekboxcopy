@@ -1,0 +1,24 @@
+%div#page-info
+	%span#title
+		Banned Users
+	%span#desc
+		Viewing Banned Users
+%br{:style => "clear:both;"}
+%div
+	=paginate @users
+%div#user_list
+	-@users.each do |user|
+		%tr
+			%td	
+				%div#each
+					%p#thumb
+						%div.thumbnail-wrapper
+							-if user.profilepic?
+								= link_to (image_tag user.profilepic_url(:profile_pic_thumb), :style => "width:200px", :class => "thumbnails" ,:alt => "#{user.username.to_s}"), other_user_path(user.username)
+							- else
+								= link_to (image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"), other_user_path(user.username)
+							%div.item-title-wrapper
+								%p.item-title
+									=user.username
+							= link_to "unban",  unban_admin_user_index_path(user.id)
+%br{:style=>"clear:both"}

@@ -1,0 +1,9 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.1449337:@value{	I"length:EFinI"digest;
+F"%7aefb41cd01bee77e8f73d3b4b63ed4eI"source;
+FI"n/* line 5, ../../../app/assets/stylesheets/profile/pictures.css.scss */
+#each {
+  margin-bottom: 15px;
+}
+;
+FI"_version;
+F"%8da66290b803d1451dabc49311b7188d

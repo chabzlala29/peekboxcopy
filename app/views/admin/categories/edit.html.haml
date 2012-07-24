@@ -1,0 +1,9 @@
+%div#page-info
+	%span#title
+		Edit Category
+	%span#desc
+=form_for @category, :url => admin_category_path do |category|
+	%label_for(:title)
+	%br
+	=category.text_field :title
+	=submit_tag "save category"

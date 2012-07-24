@@ -1,0 +1,31 @@
+%br{:style=>"clear:both"}
+%h3
+	Wall Post
+%div#wall
+	%div.post
+		-@wall_posts.each do |post|
+			%div
+				-unless post.poster == nil
+					-unless post.poster.profilepic == nil
+						%div#wall-post
+							%div#wall-poster-pic
+								=link_to (image_tag post.poster.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(post.poster.username)
+							%div#wall-post-body
+								%p
+									%span#bold
+										=link_to post.poster.username, other_user_path(post.poster.username)
+									says:
+								%p.time-ago
+									=distance_of_time_in_words_to_now(post.created_at)
+								%br
+								%p
+									=post.post
+							%br{:style => "clear:both"}
+
+%h3
+	Leave a Reply
+%br{:style => "clear:both"}
+=form_for :wall_post, :url => profile_user_wall_post_index_path(@user), :method => :post do |wall_post|
+	=wall_post.text_area :post
+	%br
+	=submit_tag "Post to wall", :id => "submit"

@@ -1,0 +1,392 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+ *= require jquery-ui-1.8.18.custom.css
+*/
+
+$container-width: 966px;
+
+$small-link: 12px;
+
+@mixin rounder($side, $radius: 10px) {
+	@if $side == all {
+		-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+		border-radius: $radius;
+	}
+
+	@if $side != all {
+		border-#{$side}-radius: $radius;
+		-moz-border-radius-#{$side}: $radius;
+		-webkit-border-#{$side}-radius: $radius;
+	}
+}
+
+@mixin wrapper-container {
+	margin:0 auto;
+	width: $container-width;
+}
+
+@mixin section {
+	height: 50px;
+}
+
+body{
+	margin:0px;
+	background:url("pb/noise.png");
+	font-family: verdana,'Ubuntu', arial, serif;
+}
+
+div#header{
+	@include section;
+	padding:0px 0px 0px 0px;
+	position: relative;
+	background: #2a2d30 url(pb/header-glow.png) top center no-repeat;
+
+	#wrapper {
+		@include wrapper-container;
+	}
+
+	#sign_status {
+		margin-top:5px;
+		font-size:$small-link;
+		float:right;
+		padding: 10px;
+		@include rounder(all, 10px);
+		background: {
+			color: #d1d1d1	
+		}
+		font-family:verdana;
+	}
+
+}
+
+div#menu_wide {
+	background:url("pb/menu-bg.png");
+	#menu {
+		@include wrapper-container;
+		height:60px;
+		#links-container {
+			float:left;
+			.link {
+				display:inline;
+				.item {
+					float:left;
+					padding:20px 10px 20px 10px;
+					list-style:none;
+					a {
+						text-decoration:none;
+					}
+				}
+			}
+		}
+		#search-container {
+			float:right;
+			padding-top:17px;
+			padding-bottom:14px;
+			#search {
+				width:200px;
+			}
+		}
+	}
+}
+
+#page-info {
+	background: url("pb/tabs-divider.png") repeat-x bottom center;
+	height:120px;
+	#title {
+		display: block;
+		float: left;
+		font-size: 30px;
+		line-height: 103px;
+		margin-left: 30px;
+		text-shadow: 1px 1px rgba(255, 255, 255, 1);
+		color: #51565B;
+	}
+	#desc {
+		display: block;
+		float: left;
+		margin-left: 30px;
+		font-size: 14px;
+		margin-top: 4px;
+		line-height: 103px;
+		color: #929191;
+		font-style: italic;
+		text-shadow: 1px 1px rgba(255, 255, 255, 1);
+	}
+}
+
+div#each{
+	float:left;
+	padding-right:12px;
+	margin-top:20px;
+	.thumbnail-wrapper {
+		width:200px;
+		height:114px;
+		position:relative;
+		p.item-description {
+			font-size: 10px;
+			margin-top: 1px;
+		}
+		.item-title-wrapper {
+			position:absolute;
+			bottom:0;
+			width:100%;
+			vertical-align:baseline;
+			p.item-title {
+				border: 1px solid #999;
+				padding: 5px 0px 5px 7px;
+				background: #333;
+				color: white;
+				width: 191px;
+				font-size: 11px;
+				display: block;
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+#wrapper {
+	#container {
+		@include wrapper-container;
+		.ads {
+			float:right;
+		}
+		#flash {
+			width:100%;
+			margin-top:20px;
+			span {
+				padding:5px;
+			}
+				.alert {
+					color: #ff9999;
+				}
+				.notice {
+					color: #99DD99;
+				}
+		}
+	}
+	#twitter-wrapper {
+		margin-top: 50px;
+		background: #f2f1f1;
+		height: 80px;
+		width: 100%;
+		background: #f2f1f1 url(pb/twitter-border.png) repeat-x;	
+
+		#twitter-container {
+			width:966px;
+			margin: 0 auto;
+
+			#tweets {
+				font-size: 16px;
+				line-height: 1.5em;
+				font-style: italic;
+				color: #838383;
+
+				a{
+					text-decoration: none;
+					color: #CCC;
+				}
+
+				width:600px;
+				float:left;
+				height: 77px;
+				position:relative;
+				ul {
+					li {
+						list-style-type:none;
+
+					}
+				}
+			}
+
+			#left-anchor {
+				width: 30px;
+				background: transparent url(pb/prev-arrow.png) no-repeat top left;
+				float:left;
+				height: 77px;
+				position:relative;
+				top:20px;
+			}
+		
+			#twitter-logo {
+				width: 89px;
+				background: transparent url(pb/bird.png) no-repeat top left;
+				float:left;
+				height: 77px;
+			}
+
+			#right-anchor {
+				width: 30px;
+				background: transparent url(pb/next-arrow.png) no-repeat top left;
+				float:right;
+				height: 77px;
+				position:relative;
+				top:20px;
+			}
+		}
+	}
+	#footer {
+		background:#2a2d30;
+		color: #ffffff;
+		height:338px;
+		#inside_footer {
+			@include wrapper-container;
+
+			#panels {
+				#links {
+					h2 {
+						color: #d7d7d7;
+						margin-top:30px;
+						margin-bottom:20px;
+						line-height:1.4em;
+						font-weight:lighter;
+						font-size:20px;
+					}
+					float:left;
+					width:48%;
+					ul.link {
+						padding:0px;
+						display:block;
+						list-style:none;
+						li.item {
+							line-height:1.7em;
+							padding-left:17px;
+							border-bottom: 1px solid #000000;
+							border-top:1px solid #4a4a4a;
+							background: url(pb/footer-bullet.png) no-repeat 0px 10px;
+							a {
+								font-size:12px;
+								text-decoration:none;
+								color: #bbbaba;
+							}
+						}
+					}
+				}
+				#welikeyou {
+					h2 {
+						color: #d7d7d7;
+						margin-top:30px;
+						margin-bottom:20px;
+						line-height:1.4em;
+						font-weight:lighter;
+						font-size:20px;
+					}
+					float:right;
+					width:48%;
+				}
+			}
+		}
+	}
+	#bottom {
+		clear:both;
+		background: #222426 url(pb/bottom-shadow.png) repeat-x;
+		background-color: "#222426" repeat-y;
+		#bottom-wrapper {
+			@include wrapper-container;
+			#copyright {
+				color: #868686;
+				line-height:60px;
+				font-size:12px;
+				float:left;
+				width:48%;
+				a {
+					text-decoration:none;
+					color: #afeaf9;
+				}
+			}
+			#share {
+				float:left;
+				color: #868686;
+				line-height:60px;
+				font-size:12px;
+				width:48%;
+				a {
+					text-decoration:none;
+					color: #afeaf9;
+				}
+				#facebook_link {
+					width:32px;
+					height:32px;
+					display:block;
+					background: url(pb/facebook_32.png);
+					&:hover {
+						background-position: 0px -32px;
+					}
+				}
+				#twitter_link {
+					width:32px;
+					height:32px;
+					display:block;
+					background: url(pb/twitter_32.png);
+					&:hover {
+						background-position: 0px -32px;
+					}
+				}
+				.social {
+					float:right;
+				}
+			}
+		}
+	}
+}
+
+input{
+  -moz-border-radius: 8px;
+  -moz-transition: background 1.2s ease-in;
+  -ms-transition: background 1.2s ease-in;
+  -o-transition: background 1.2s ease-in;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: #6E7849 0 0 10px;
+  -webkit-transition: background 1.2s ease-in;
+  background-color: #aaaaaa;
+  background-image: -moz-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: -ms-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: -o-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: -webkit-linear-gradient(90deg, #000000, #aaaaaa);
+  background-image: linear-gradient(90deg, #000000, #aaaaaa);
+  border-radius: 8px;
+  border: 1px solid #000000;
+  color: #ffffff;
+  display: inline-block;
+  margin: 0px 0px 10px 0px;
+  padding: 0px 8px 8px 8px;
+  text-decoration: none;
+}
+select{
+  margin: 0px 0px 10px 0px;
+  padding: 0px 8px 8px 8px;
+
+}
+
+p.time-ago {
+	font-style:italic;
+	color: #00bbbb;
+	font-size:10px
+}
+a {
+	text-decoration:none;
+}
+.myPeekButton {
+  border-radius: 0px;
+	background: url(myPeekButton.png) no-repeat center top;
+	width: 72px;
+	height:21px;
+}
+.unPeekButton {
+  border-radius: 0px;
+	background: url(unPeekButton.png) no-repeat center top;
+	width: 72px;
+	height:21px;
+}
+
+textarea {
+	width: 285px;
+	height: 130px;
+  margin: 0px 0px 10px 0px;
+  padding: 0px 8px 8px 8px;
+}

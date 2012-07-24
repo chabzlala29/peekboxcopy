@@ -1,0 +1,17 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1955988:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%ffab1e71c5ccfd225c3b8eb6aa42941bI"logical_path;
+FI"pb/bottom-shadow.png;
+TI"pathname;
+FI"1$root/app/assets/images/pb/bottom-shadow.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2012-07-16T17:25:54+08:00;
+FI"length;
+FI"145;
+FI"digest;
+F"%b0c10656341f22bd8a95f9d4ef5130acI"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

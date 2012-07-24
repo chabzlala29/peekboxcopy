@@ -1,0 +1,28 @@
+%div#page-info
+	%span#title
+		Sents
+	%span#desc
+		Sent Messages
+%br{:style=>"clear:both"}
+%h3
+	Sent
+%div#wall
+	%div.post
+		-@messages.each do |message|
+			%div
+				-unless message.friend.profilepic == nil
+					%div#wall-post
+						-if message.friend.profilepic?
+							%div#wall-poster-pic
+								=link_to (image_tag message.friend.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(message.friend.username)
+						%div#wall-post-body
+							%p
+								%span#bold
+									=link_to message.friend.username, other_user_path(message.friend.username)
+							%p.time-ago
+								=distance_of_time_in_words_to_now(message.created_at)
+							%br
+							%p
+								=message.message
+						%br{:style => "clear:both"}
+

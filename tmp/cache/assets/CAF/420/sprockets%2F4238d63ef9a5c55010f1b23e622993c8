@@ -1,0 +1,47 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.0255952:@value{	I"length:EFi.I"digest;
+F"%f315c06d643624a82bf78b87a75115e3I"source;
+FI"./* line 5, ../../app/assets/stylesheets/albums.css.scss */
+div#albums {
+  width: 700px;
+  float: left;
+}
+
+/* line 10, ../../app/assets/stylesheets/albums.css.scss */
+div#album-each {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  float: left;
+  padding-right: 12px;
+}
+/* line 15, ../../app/assets/stylesheets/albums.css.scss */
+div#album-each .thumbnail-wrapper {
+  width: 200px;
+  height: 114px;
+  position: relative;
+}
+/* line 19, ../../app/assets/stylesheets/albums.css.scss */
+div#album-each .thumbnail-wrapper p.item-description {
+  font-size: 10px;
+  margin-top: 1px;
+}
+/* line 23, ../../app/assets/stylesheets/albums.css.scss */
+div#album-each .thumbnail-wrapper .item-title-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  vertical-align: baseline;
+}
+/* line 28, ../../app/assets/stylesheets/albums.css.scss */
+div#album-each .thumbnail-wrapper .item-title-wrapper p.item-title {
+  border: 1px solid #999;
+  padding: 5px 0px 5px 7px;
+  background: #333;
+  color: white;
+  width: 191px;
+  font-size: 11px;
+  display: block;
+  margin-bottom: 0px;
+}
+;
+FI"_version;
+F"%76207e88beb40f4bbddaa9263d41a607

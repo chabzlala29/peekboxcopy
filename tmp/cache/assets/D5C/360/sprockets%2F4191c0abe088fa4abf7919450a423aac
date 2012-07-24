@@ -1,0 +1,17 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1783388:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%96eb1ad8a98905d3081f9ecc88e6cf55I"logical_path;
+FI"pb/footer-bullet.png;
+TI"pathname;
+FI"1$root/app/assets/images/pb/footer-bullet.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2012-07-16T17:25:54+08:00;
+FI"length;
+FI"391;
+FI"digest;
+F"%6f516336d1b90827b9699667cb7e0408I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

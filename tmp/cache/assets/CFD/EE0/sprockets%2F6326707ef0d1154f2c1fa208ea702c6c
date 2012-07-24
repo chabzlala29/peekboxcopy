@@ -1,0 +1,16 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.007151:@value{	I"length:EFiI"digest;
+F"%bc2f18afb5733e4408a38e7c3929946bI"source;
+FI"/* line 6, ../../../app/assets/stylesheets/admin/ads.css.scss */
+div#ads_list table {
+  border: solid 1px;
+  width: 700px;
+  margin: 0 auto;
+}
+/* line 8, ../../../app/assets/stylesheets/admin/ads.css.scss */
+div#ads_list table td {
+  border: solid 1px;
+  text-align: center;
+}
+;
+FI"_version;
+F"%ffebeda160aa4646692773ada7e50034

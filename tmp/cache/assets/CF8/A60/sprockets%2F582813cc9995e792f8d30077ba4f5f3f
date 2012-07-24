@@ -1,0 +1,219 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.1655629:@value{	I"length:EFiÔI"digest;
+F"%e6f9e2139eba6074489e9eefb7850f38I"source;
+FI"Ô/* line 4, ../../app/assets/stylesheets/videos.css.scss */
+#show-video-page-info {
+  background: url("pb/tabs-divider.png") repeat-x bottom center;
+  height: 30px;
+}
+
+/* line 9, ../../app/assets/stylesheets/videos.css.scss */
+#video-show-page {
+  width: 650px;
+}
+/* line 11, ../../app/assets/stylesheets/videos.css.scss */
+#video-show-page h3 {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+/* line 17, ../../app/assets/stylesheets/videos.css.scss */
+h1#video-category {
+  size: 14px;
+  background-color: gray;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  width: 300px;
+}
+
+/* line 25, ../../app/assets/stylesheets/videos.css.scss */
+h1#video-title {
+  size: 14px;
+  color: gray;
+  margin-bottom: 0px;
+}
+
+/* line 32, ../../app/assets/stylesheets/videos.css.scss */
+div#video-owner {
+  background: #ffffff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 40, ../../app/assets/stylesheets/videos.css.scss */
+div#video-owner #profilepic {
+  float: left;
+}
+/* line 42, ../../app/assets/stylesheets/videos.css.scss */
+div#video-owner #profilepic img {
+  width: 100px;
+}
+/* line 46, ../../app/assets/stylesheets/videos.css.scss */
+div#video-owner #profile-information {
+  padding-left: 10px;
+  float: left;
+}
+/* line 47, ../../app/assets/stylesheets/videos.css.scss */
+div#video-owner #profile-information span#bold {
+  font-weight: bold;
+}
+/* line 52, ../../app/assets/stylesheets/videos.css.scss */
+div#video-owner #profile-information span#category {
+  background: #ddd;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 62, ../../app/assets/stylesheets/videos.css.scss */
+div#video_each {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  float: left;
+  padding-right: 12px;
+}
+/* line 67, ../../app/assets/stylesheets/videos.css.scss */
+div#video_each .thumbnail-wrapper {
+  width: 200px;
+  height: 114px;
+  position: relative;
+}
+/* line 71, ../../app/assets/stylesheets/videos.css.scss */
+div#video_each .thumbnail-wrapper p.item-description {
+  font-size: 10px;
+  margin-top: 1px;
+}
+/* line 75, ../../app/assets/stylesheets/videos.css.scss */
+div#video_each .thumbnail-wrapper .item-title-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  vertical-align: baseline;
+}
+/* line 80, ../../app/assets/stylesheets/videos.css.scss */
+div#video_each .thumbnail-wrapper .item-title-wrapper p.item-title {
+  border: 1px solid #999;
+  padding: 5px 0px 5px 7px;
+  background: #333;
+  color: white;
+  width: 191px;
+  font-size: 11px;
+  display: block;
+  margin-bottom: 0px;
+}
+
+/* line 94, ../../app/assets/stylesheets/videos.css.scss */
+.view-all-link {
+  margin-right: 55px;
+}
+
+/* line 98, ../../app/assets/stylesheets/videos.css.scss */
+div#video_list {
+  width: 684px;
+  float: left;
+}
+
+/* line 103, ../../app/assets/stylesheets/videos.css.scss */
+div#categories {
+  float: right;
+  width: 232px;
+}
+/* line 106, ../../app/assets/stylesheets/videos.css.scss */
+div#categories li {
+  list-style-type: none;
+  line-height: 30px;
+  text-decoration: none;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  border-bottom: 1px solid #D7D7D7;
+  font-size: 14px;
+}
+/* line 114, ../../app/assets/stylesheets/videos.css.scss */
+div#categories li a {
+  text-decoration: none;
+  width: 100%;
+  color: dimGray;
+  display: block;
+}
+
+/* line 122, ../../app/assets/stylesheets/videos.css.scss */
+input#submit {
+  -moz-border-radius: 8px;
+  -moz-transition: background 1.2s ease-in;
+  -ms-transition: background 1.2s ease-in;
+  -o-transition: background 1.2s ease-in;
+  -webkit-border-radius: 8px;
+  -webkit-box-shadow: #6E7849 0 0 10px;
+  -webkit-transition: background 1.2s ease-in;
+  background-color: #aaaaaa;
+  background-image: -moz-linear-gradient(90deg, black, #aaaaaa);
+  background-image: -ms-linear-gradient(90deg, black, #aaaaaa);
+  background-image: -o-linear-gradient(90deg, black, #aaaaaa);
+  background-image: -webkit-linear-gradient(90deg, black, #aaaaaa);
+  background-image: linear-gradient(90deg, black, #aaaaaa);
+  border-radius: 8px;
+  border: 1px solid #000000;
+  color: #ffffff;
+  display: inline-block;
+  margin: 10px 0px 10px 0px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+/* line 145, ../../app/assets/stylesheets/videos.css.scss */
+input#submit:hover {
+  background-image: -moz-linear-gradient(90deg, #aaaaaa, black);
+  background-image: -ms-linear-gradient(90deg, #aaaaaa, black);
+  background-image: -o-linear-gradient(90deg, #aaaaaa, black);
+  background-image: -webkit-linear-gradient(90deg, #aaaaaa, black);
+  background-image: linear-gradient(90deg, #aaaaaa, black);
+}
+
+/* line 153, ../../app/assets/stylesheets/videos.css.scss */
+textarea#comment_text {
+  background: #4B5054;
+  color: #fff;
+  padding: 5px;
+  height: 196px;
+  width: 416px;
+}
+
+/* line 161, ../../app/assets/stylesheets/videos.css.scss */
+div#video-comment {
+  background: #ddd;
+  display: block;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 171, ../../app/assets/stylesheets/videos.css.scss */
+div#video-comment-pic {
+  float: left;
+  width: auto;
+}
+
+/* line 175, ../../app/assets/stylesheets/videos.css.scss */
+div#video-comment-body {
+  top: 0px;
+  padding-left: 60px;
+  margin-left: 10px;
+}
+/* line 179, ../../app/assets/stylesheets/videos.css.scss */
+div#video-comment-body p {
+  margin: 0px;
+}
+
+/* line 183, ../../app/assets/stylesheets/videos.css.scss */
+span.optional {
+  font-size: 12px;
+}
+;
+FI"_version;
+F"%37377bc7ea54ea40470f14ce4aebb69b

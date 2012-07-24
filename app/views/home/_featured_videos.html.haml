@@ -1,0 +1,10 @@
+-@featured_videos.each do |vid|
+	%div#each
+		%p#thumb
+			%div.thumbnail-wrapper
+				=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+				%div.item-title-wrapper
+					%p.item-title
+						= truncate(vid.title, :length => 30, :omission =>"...")
+				%p.item-description
+					= truncate(vid.description, :length => 30, :omission =>"...")

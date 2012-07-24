@@ -1,0 +1,56 @@
+%div#page-info
+	%span#title
+		=@album.title
+	%span#desc
+		Viewing Album
+%br{:style => "clear:both;"}
+	-if current_user.admin
+		%div
+			=link_to "Admin Delete",admin_album_path(@album.id)
+			%br 
+			=link_to "Admin Edit", edit_admin_album_path(@album.id)
+%br{:style => "clear:both;"}
+%div#albums-page
+	-if @album.image?
+		%div#album-page-image
+			= image_tag @album.image_url(:album_cover)
+	%div#sharethis{:style => "float:left;text-align:right;margin:0 auto;"}
+		%span.st_facebook_hcount{:displayText => "Facebook"}
+		%span.st_twitter_hcount{:displayText => "Tweet"}
+		%span.st_googleplus_hcount{:displayText => "google plus"}
+		%span.st_sharethis_hcount{:displayText => "shareThis"}
+	%br{:style => "clear:both"}
+	-unless current_user== nil
+		%p
+			Uploaded By:
+			%span#bold
+				=link_to @album.user.username, other_user_path(@album.user.username)
+		%br{:style => "clear:both;"}
+	-unless @album.description == nil
+		%h2
+			Album Description
+		%p{:style => "width:650px;"}
+			=auto_link(@album.description)
+		%br{:style => "clear:both;"}
+-if @pictures.empty?
+	%p 
+		No Picture Available
+-else
+	%h2
+		Photos
+	%div#album{:style => "float:left;width:733px;padding-top:50px;"}
+		=paginate @pictures
+		-@pictures.each do |picture|
+			%div#each
+				%div#picture_cover.thumbnail-wrapper
+					=link_to (image_tag picture.image_url(:picture_thumb).to_s), album_picture_path(picture.album, picture.id) 
+					%div#album_title.item-title-wrapper
+						%p.item-title
+							=picture.title	
+					%p.item-description{:style => "font-size:10px;margin-top:1px;"}
+						= truncate(picture.description, :length => 30, :omission =>"...")
+	
+- unless @ad == nil
+	%div.ads{:style => "float:right;"}
+		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
+%br{:style => "clear:both"}

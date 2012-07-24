@@ -1,0 +1,17 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1859655:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%4f876ee9edf498858ec565825b239ecbI"logical_path;
+FI"pb/next-arrow.png;
+TI"pathname;
+FI".$root/app/assets/images/pb/next-arrow.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2012-07-16T17:25:54+08:00;
+FI"length;
+FI"	1018;
+FI"digest;
+F"%bd69088f69216f9ea0045c0a1c8a8c01I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

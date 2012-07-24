@@ -1,0 +1,14 @@
+%div#page-info
+	%span#title
+		Compose
+	%span#desc
+		Compose a new Message
+=form_for :message, :url => send_message_profile_messages_path do |message|
+	%label{:for => "friend"} To:
+	= collection_select(:message, :friend_id, @friends, :id, :username)
+	%br
+	%label{:for => "message"} Body:
+	%br
+	= message.text_area :message
+	%br
+	= submit_tag "Send"

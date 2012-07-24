@@ -1,0 +1,61 @@
+-if current_user.admin?
+	%div#page-info{:style => "height:60px;margin-top:20px"}
+		%h2
+			Peekbox Admin Dashboard
+	%div#dashboard{:style => "margin-top:20px"}
+		%div.link
+			Featured
+			%ul.link
+				%li.item
+					= link_to 'Featured Event List' , events_admin_feature_index_path
+				%li.item
+					= link_to 'Special Event List', special_admin_feature_index_path 
+				%li.item
+					= link_to 'Featured Video List' , videos_admin_feature_index_path
+				%li.item
+					= link_to 'Featured Album List' , albums_admin_feature_index_path
+		%div.link
+			Sponsored Ads
+			%ul.link
+				%li.item
+					= link_to 'Skyscraper Ads' , admin_ads_path
+				%li.item
+					= link_to 'Add Skyscraper Ads' , new_admin_ad_path
+				%li.item
+					= link_to 'PreRoll Video' , admin_video_ads_path
+				%li.item
+					= link_to 'Add PreRoll Video' , new_admin_video_ad_path
+		%div.link
+			Banners
+			%ul.link
+				%li.item
+					= link_to 'Home Banner' , admin_banner_index_path
+				%li.item
+					= link_to 'Add Home Banner' , new_admin_banner_path
+				%li.item
+					= link_to 'Event Banner' , admin_event_banner_index_path
+				%li.item
+					= link_to 'Add Event Banner' , new_admin_event_banner_path
+		%div.link
+			User Management
+			%ul.link
+				%li.item
+					= link_to 'Banned User List' , ban_list_admin_user_index_path
+				%li.item
+					= link_to 'Ban a User' , admin_user_index_path
+				%li.item
+					= link_to 'Admin User' , admin_admin_user_index_path
+		%div.link
+			Campaigns
+			%ul.link
+				%li.item
+					= link_to 'Category' , admin_categories_path
+				%li.item
+					= link_to 'Add Contest' , new_admin_contest_path
+				%li.item
+					= link_to 'View Submitted Videos' , admin_contests_path
+				%li.item
+					= link_to 'Eligibility Code List' , admin_eligibilities_path
+				%li.item
+					= link_to 'Import Eligibility Code' , new_admin_eligibility_path
+		%br{:style=>"clear:both"}

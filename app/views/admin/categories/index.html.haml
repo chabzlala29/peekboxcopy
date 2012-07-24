@@ -1,0 +1,26 @@
+%div#page-info
+	%span#title
+		Categories
+	%span#desc
+		Viewing video categories
+
+=form_for @category, :url => admin_categories_path do |category|
+	%label_for(:title)
+	%br
+	=category.text_field :title
+	=submit_tag "add category"
+
+%div#ads_list
+	%table
+		%tr
+			%th
+				Title
+			%th
+				Created at
+			-@categories.each do |category|
+				%tr
+					%td	
+						=link_to category.title, edit_admin_category_path(category)
+					%td	
+						=category.created_at
+%br{:style=>"clear:both"}

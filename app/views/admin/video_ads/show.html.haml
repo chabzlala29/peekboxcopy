@@ -1,0 +1,9 @@
+%div#page-info
+	%span#title
+		=@videoAd.title
+	%span#desc
+-if @videoAd.processed?
+	%div#video-show-page
+		=@videoAd.title
+		%p
+			= video_tag(@videoAd.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-ad")

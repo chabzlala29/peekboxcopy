@@ -1,0 +1,40 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.9362698:@value{	I"length:EFiÔI"digest;
+F"%4fc20404a0cf46b0962aad859e480e5dI"source;
+FI"Ô(function() {
+  var $j, ads, currentVideo, playAds, playCount, switchTo5x;
+
+  $j = jQuery;
+
+  playCount = 0;
+
+  playAds = true;
+
+  ads = "https://peekbox.s3.amazonaws.com/uploads/video/media/4/video.mp4";
+
+  currentVideo = null;
+
+  $j(function() {
+    ads = $('#video-element').attr('ads');
+    $('#video-element').bind('play', function() {
+      if (playAds === true) {
+        currentVideo = this.src;
+        this.src = ads;
+        this.play();
+        return playAds = false;
+      }
+    });
+    return $('#video-element').bind('ended', function() {
+      if (playCount < 1) {
+        this.src = currentVideo;
+        this.play();
+        return playCount++;
+      }
+    });
+  });
+
+  switchTo5x = true;
+
+}).call(this);
+;
+FI"_version;
+F"%a1a3525eb6e36c4d9ff52842ae9e6a25

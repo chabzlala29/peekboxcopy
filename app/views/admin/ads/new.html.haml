@@ -1,0 +1,18 @@
+=form_for @ads,:url => admin_ads_path, :html => {:multipart => true} do |ad|
+	%label{:for => "title"} Name:
+	%br
+	= ad.text_field :title
+	%br
+	%label{:for => "url"} Url:
+	%br
+	= ad.text_field :url
+	%br
+	%label{:for => "banner"} Banner Image:
+	%br
+	= ad.file_field :banner
+	%br
+	%label{:for => "location"} location:
+	%br
+	= select(:ads, :location, %w(home videos events albums album user))
+	%br
+	= submit_tag "Add Ads"

@@ -1,0 +1,17 @@
+%div#page-info
+	%span#title
+		=@contest.title
+	%span#desc
+		="Viewing Videos submmitted to #{@contest.title}"
+%div
+	=paginate @videos
+%div#video_list
+	-@videos.each do |vid|
+		%div#video_each
+			%p#thumb
+				%div.thumbnail-wrapper
+					=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+					%div.video-item-title-wrapper
+						%p.video-item-title
+							=vid.title
+%br{:style=>"clear:both"}

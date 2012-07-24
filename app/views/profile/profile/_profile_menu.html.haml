@@ -1,0 +1,50 @@
+%div#dashboard
+	%div#avatar
+		%h3
+			Avatar Image:
+		%div
+			=image_tag @user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
+
+	%div.link
+		Videos
+		%ul.link
+			%li.item
+				= link_to 'Uploaded Videos' , profile_videos_path
+			%li.item
+				= link_to 'Add Video' , new_profile_video_path
+	%div.link
+		Photos
+		%ul.link
+			%li.item
+				= link_to 'Uploaded Albums' , profile_albums_path
+			%li.item
+				= link_to 'Add Album' , new_profile_album_path
+	%div.link
+		Events
+		%ul.link
+			%li.item
+				= link_to 'Events' , profile_events_path
+			%li.item
+				= link_to 'Add Event' , new_profile_event_path
+	%div.link
+		Messages
+		%ul.link
+			%li.item
+				= link_to 'Compose' 
+			%li.item
+				= link_to 'Inbox' 
+			%li.item
+				= link_to 'Sent' 
+	%div.link
+		Profile
+		%ul.link
+			%li.item
+				= link_to 'Change Information' 
+			%li.item
+				= link_to 'Change Password' 
+			%li.item
+				= link_to 'Profile Page', other_user_path(current_user.username)
+			%li.item
+				= link_to 'Crop Profile Picture', other_user_path(current_user.username)
+
+	%br{:style=>"clear:both"}

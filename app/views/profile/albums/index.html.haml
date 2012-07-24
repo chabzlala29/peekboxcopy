@@ -1,0 +1,17 @@
+%h1
+	Albums
+-if @albums.empty?
+	%p
+		No Albums Found!
+-else
+	=paginate @albums
+	-@albums.each do |album|
+		%div#each
+			%div#album_cover.thumbnail-wrapper
+				=link_to (image_tag album.image_url(:album_thumb).to_s), profile_album_pictures_path(album) 
+				%div#album_title.item-title-wrapper
+					%p.item-title
+						=album.title	
+			%div
+				=link_to "Delete", profile_album_path(album.id), :method => :delete
+%br{:style => "clear:both;"}

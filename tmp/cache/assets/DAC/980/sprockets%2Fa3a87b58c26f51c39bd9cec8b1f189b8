@@ -1,0 +1,17 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031265.1192322:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%fcb4774e7d516b83f00c0c7de16ff2d1I"logical_path;
+FI"pb/noise.png;
+TI"pathname;
+FI")$root/app/assets/images/pb/noise.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2012-07-16T17:25:54+08:00;
+FI"length;
+FI"	1794;
+FI"digest;
+F"%a3b401be34e3b5b8fe091e40a41beebcI"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

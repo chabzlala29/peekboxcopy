@@ -1,0 +1,24 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.14691:@value{	I"length:EFi(I"digest;
+F"%040863cdcb8a2c44e1471b48752213e8I"source;
+FI"(/* line 6, ../../../app/assets/stylesheets/profile/profile.css.scss */
+div#dashboard #avatar {
+  float: left;
+}
+/* line 9, ../../../app/assets/stylesheets/profile/profile.css.scss */
+div#dashboard div.link {
+  margin: 0px;
+  padding: 10px 20px 10px 10px;
+  height: auto;
+  float: left;
+}
+/* line 14, ../../../app/assets/stylesheets/profile/profile.css.scss */
+div#dashboard div.link ul.link {
+  padding-left: 15px;
+}
+/* line 16, ../../../app/assets/stylesheets/profile/profile.css.scss */
+div#dashboard div.link ul.link li.item {
+  list-style: disc;
+}
+;
+FI"_version;
+F"%65d153ef61142ffb583360bc768e4b6e

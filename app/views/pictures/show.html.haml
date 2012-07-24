@@ -1,0 +1,39 @@
+-@pictures.each do |pic|
+	%div#page-info
+		%span#title
+			=pic.title
+		%span#desc
+	%br{:style => "clear:both"}
+	%div#picture-page
+		-if pic.image?
+			%div#picture-page-image
+				= image_tag pic.image_url(:picture_page).to_s
+			%div#sharethis{:style => "float:left;text-align:right;margin:0 auto;"}
+				%span.st_facebook_hcount{:displayText => "Facebook"}
+				%span.st_twitter_hcount{:displayText => "Tweet"}
+				%span.st_googleplus_hcount{:displayText => "google plus"}
+				%span.st_sharethis_hcount{:displayText => "shareThis"}
+			%div{:style => "float:left"}
+				%p{:style => "margin:0px 5px 0px 5px"}
+					Peeks:
+					-if pic.picture_bookmarks == nil
+						= "0"
+					-else
+						= pic.picture_bookmarks.count
+			-unless current_user == nil
+				-if current_user.is_picture_bookmarked(pic)
+					= button_to "", {:controller => "profile/picture_bookmark", :method => "post", :picture => pic.id}, {:style => "padding-top:3px;margin-top:0px", :class => "myPeekButton"}
+				-else
+					= button_to "", {:controller => "profile/picture_bookmark", :action => "unbookmark",  :id => pic.id}, {:style => "padding-top:3px;margin-top:0px",:class => "unPeekButton"}
+		%br{:style => "clear:both"}
+		-unless current_user == nil
+			-if current_user.admin || current_user == pic.user
+				=link_to "Edit", edit_profile_album_picture_path(pic.album, pic)
+				=link_to "Delete", profile_album_picture_path(pic.album, pic), :method => :delete, :confirm => "Are you sure?"
+		%br{:style => "clear:both"}
+		%p
+			%p
+				Description:
+			%p
+				=pic.description
+=paginate @pictures

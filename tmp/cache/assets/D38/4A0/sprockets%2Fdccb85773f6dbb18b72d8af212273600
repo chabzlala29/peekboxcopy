@@ -1,0 +1,83 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1343031263.0724738:@value{	I"length:EFiÿI"digest;
+F"%d9933b762646d43f1f830a58d25fa385I"source;
+FI"ÿ/* line 6, ../../app/assets/stylesheets/events.css.scss */
+#event-thumbnail {
+  float: left;
+}
+/* line 8, ../../app/assets/stylesheets/events.css.scss */
+#event-thumbnail input {
+  width: 100%;
+}
+
+/* line 12, ../../app/assets/stylesheets/events.css.scss */
+.event-title {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.4em;
+  font-family: verdana,'Ubuntu', arial, serif;
+  font-weight: lighter;
+}
+/* line 15, ../../app/assets/stylesheets/events.css.scss */
+.event-title a {
+  color: #37B2D1;
+}
+
+/* line 23, ../../app/assets/stylesheets/events.css.scss */
+#event-content {
+  float: left;
+  padding-left: 30px;
+  width: 500px;
+}
+/* line 24, ../../app/assets/stylesheets/events.css.scss */
+#event-content .title {
+  font-weight: bold;
+}
+
+/* line 32, ../../app/assets/stylesheets/events.css.scss */
+.nivoSlider {
+  height: 331px;
+  width: 635px;
+}
+
+/* line 37, ../../app/assets/stylesheets/events.css.scss */
+#event-page-image {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 44, ../../app/assets/stylesheets/events.css.scss */
+#event_each #event-thumbnail input {
+  padding-top: 0px;
+  height: 18px;
+}
+/* line 50, ../../app/assets/stylesheets/events.css.scss */
+#event_each #event-content p#location {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+/* line 54, ../../app/assets/stylesheets/events.css.scss */
+#event_each #event-content p#upload_date {
+  margin-bottom: 8px;
+}
+/* line 57, ../../app/assets/stylesheets/events.css.scss */
+#event_each #event-content p#description {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+/* line 67, ../../app/assets/stylesheets/events.css.scss */
+#event-page {
+  width: 700px;
+}
+
+/* line 70, ../../app/assets/stylesheets/events.css.scss */
+div#events-pagination {
+  padding: 10px;
+  margin: 10px;
+}
+;
+FI"_version;
+F"%820885669d4726698d9cfdb6288dfcba

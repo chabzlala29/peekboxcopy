@@ -1,0 +1,10 @@
+-@albums.each do |album|
+	%div#each
+		%p#thumb
+			%div.thumbnail-wrapper
+				=link_to (image_tag album.image_url(:album_thumb), :class => "thumbnails" ,:alt => album.title.to_s), album_pictures_path(album.id)
+				%div.item-title-wrapper
+					%p.item-title
+						= truncate(album.title, :length => 29, :omission =>"...")
+				%p.item-description
+					= truncate(album.description, :length => 30, :omission =>"...")

@@ -1,0 +1,52 @@
+%br{:style=>"clear:both"}
+%div#videos_list
+	-unless @videos.empty?
+		%h3
+			VIDEOS
+		-@videos.each do |vid|
+			%div#video_each
+				%p#thumb
+					%div.thumbnail-wrapper
+						=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+						%div.item-title-wrapper
+							%p.item-title
+								=vid.title
+		%br{:style=>"clear:both"}
+		%div.view-all-link
+			%p
+				=link_to "View All", videos_path
+%br{:style=>"clear:both"}
+%div#albums_list
+	-unless @albums.empty?
+		%h3
+			ALBUMS
+		%div#album_each
+			-@albums.each do |album|
+				%div#each
+					%div#album_cover.thumbnail-wrapper
+						=link_to (image_tag album.image_url(:album_thumb).to_s), album_pictures_path(album) 
+						%div#album_title.item-title-wrapper
+							%p.item-title
+								=album.title	
+		%br{:style=>"clear:both"}
+		%div.view-all-link
+			%p
+				=link_to "View All", albums_path 
+%br{:style=>"clear:both"}
+%div#events_list
+	-unless @events.empty?
+		%h3
+			EVENTS
+		%div#each
+			-@events.each do |event|
+				%div#each
+					%div#event_thumb.thumbnail-wrapper
+						=link_to (image_tag event.image_url(:thumb).to_s), event_path(event) 
+						%div#event_title.item-title-wrapper
+							%p.item-title
+								=event.title	
+		%br{:style=>"clear:both"}
+		%div.view-all-link
+			%p
+				=link_to "View All", events_path
+%br{:style=>"clear:both"}

@@ -1,0 +1,10 @@
+-@events.each do |event|
+	%div#each
+		%p#thumb
+			%div.thumbnail-wrapper
+				=link_to (image_tag event.image_url(:thumb), :class => "thumbnails" ,:alt => event.title.to_s), event_path(event.id)
+				%div.item-title-wrapper
+					%p.item-title
+						= truncate(event.title, :length => 29, :omission =>"...")
+				%p.item-description
+					= truncate(event.description, :length => 30, :omission =>"...")

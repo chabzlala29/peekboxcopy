@@ -1,0 +1,21 @@
+// Place all the styles related to the profile/profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#dashboard {
+	#avatar{
+		float:left;
+	}
+	div.link {
+		margin:0px;
+		padding:10px 20px 10px 10px;
+		height:auto;
+		float:left;
+		ul.link {
+			padding-left:15px;
+			li.item {
+				list-style:disc;
+			}
+		}
+	}
+}

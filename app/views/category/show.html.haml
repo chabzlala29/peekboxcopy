@@ -1,0 +1,23 @@
+%div#page-info
+	%span#title
+		=@title.title
+	%span#desc
+%br{:style => "clear:both;"}
+%div#video_list
+	-@videos.each do |vid|
+		%div#video_each
+			%div.thumbnail-wrapper
+				=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+				%div.item-title-wrapper
+					%p.item-title
+						=vid.title
+				%p.item-description
+					= truncate(vid.description, :length => 30, :omission =>"...")
+%div#categories
+	- unless @ad == nil
+		%div.ads{:style => "float:right"}
+			=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
+	= render :partial => "layouts/sidebar_categories"
+%br{:style=>"clear:both"}
+%div
+	=paginate @videos

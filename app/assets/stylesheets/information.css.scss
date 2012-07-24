@@ -1,0 +1,135 @@
+// Place all the styles related to the Information controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#pic {
+	width:auto;
+	float:left
+}
+
+div#information {
+	float:left;
+	color: #666;
+	padding-left:10px;
+	div {
+		font-family: verdana;
+		h3 {
+			font-size:26px;
+			margin-top:0px;
+		}
+	}
+}
+
+h3{
+	font-family: verdana, 'Ubuntu';
+	font-weight: lighter;
+	margin-bottom:0px;
+	color: #666;
+}
+
+div.view-all-link {
+	float:right;
+}
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	padding: 8px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#c9ab34 50%,
+		#57461c 50%,
+		#755b1a 65%,
+		#a38923);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ffffff),
+		color-stop(0.50, #c9ab34),
+		color-stop(0.50, #57461c),
+		color-stop(0.65, #755b1a),
+		to(#a38923));
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #000000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(161,142,016,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 5px rgba(161,142,016,0.6);
+	text-shadow:
+		0px -1px 3px rgba(255,255,255,0.8),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#wall{
+	.post {
+		#wall-post {
+			padding:10px;
+			margin-bottom:10px;
+			background:#fff;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+    
+			#wall-poster-pic {
+				float:left;
+			}	
+			#wall-post-body {
+				padding-left:20px;
+				float:left;
+				p {
+					margin: 0px;
+					
+				}
+			}
+		}
+	}
+}
+#user-page-content{
+	margin:15px 0px 10px 0px;
+	width:700px;
+	#user-page-control {
+		a.userpage-btn {
+
+			-moz-border-radius-topleft: 3px;
+			-moz-border-radius-topright: 10px;
+			-moz-border-radius-bottomright: 10px;
+			-moz-border-radius-bottomleft: 10px;
+			-webkit-border-radius: 3px 10px 10px 10px;
+			border-radius: 3px 10px 10px 10px;
+        
+        
+			cursor:pointer;
+			padding:12px 20px 20px 20px;
+		}
+		a.user-page-selected {
+			background:#d5cfa7;
+		}
+	}
+	#user-page-data {
+		/*border*/
+		-moz-border-radius-topleft: 0px;
+		-moz-border-radius-topright: 10px;
+		-moz-border-radius-bottomright: 0px;
+		-moz-border-radius-bottomleft: 0px;
+		-webkit-border-radius: 0px 10px 0px 0px;
+		border-radius: 0px 10px 0px 0px;
+
+		background: -moz-linear-gradient(top,  rgba(213,206,166,1) 0%, rgba(201,193,144,0.6) 40%, rgba(183,173,112,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(213,206,166,1)), color-stop(40%,rgba(201,193,144,0.6)), color-stop(100%,rgba(183,173,112,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* IE10+ */
+		background: linear-gradient(top,  rgba(213,206,166,1) 0%,rgba(201,193,144,0.6) 40%,rgba(183,173,112,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5cea6', endColorstr='#00b7ad70',GradientType=0 ); /* IE6-9 */
+
+		padding:10px;
+		#user-page-wall-post {
+			display:none;
+		}
+	}
+}
+

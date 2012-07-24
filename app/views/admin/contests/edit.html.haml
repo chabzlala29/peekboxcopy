@@ -1,0 +1,9 @@
+%div#page-info
+	%span#title
+		Edit Contest
+	%span#desc
+=form_for @contest, :url => admin_contest_path do |contest|
+	%label_for(:title)
+	%br
+	=contest.text_field :title
+	=submit_tag "save contest"

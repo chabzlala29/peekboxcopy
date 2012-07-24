@@ -1,0 +1,2 @@
+module Admin::EventBannerHelper
+end
