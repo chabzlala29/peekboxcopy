@@ -28,7 +28,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+#gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'fog'
 gem 'therubyracer', :platform => :ruby 
@@ -46,16 +46,17 @@ gem 'json'
 gem 'kaminari'
 gem 'rails_autolink'
 gem 'flash_cookie_session'
+gem 'pivotal_git_scripts'
 
 group :development do
-	gem 'heroku-rails'
+  gem 'heroku-rails'
 end
 
 
-#group :test, :development do 
-#	gem 'rspec-rails', '2.8'
-#	gem 'factory_girl_rails'
-#	gem 'capybara'
-#	gem 'guard-rspec'
-#end
+group :test, :development do 
+  gem 'rspec-rails', '2.8'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+end
 

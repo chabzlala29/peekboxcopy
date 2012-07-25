@@ -1,0 +1,8 @@
+# .pairs - configuration for 'git pair'
+pairs:
+  # <initials>: <Firstname> <Lastname>[; <email-id>]
+  jv: Jay Ricky Villarante
+  tj: Titus James Del Castillo
+email:
+  prefix: pair
+  domain: peekbox.tv
