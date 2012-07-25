@@ -81,13 +81,6 @@ ActiveRecord::Schema.define(:version => 20120501142157) do
     t.boolean  "enable",     :default => true
   end
 
-  create_table "eligibilities", :force => true do |t|
-    t.string   "code"
-    t.boolean  "taken",      :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "eligibility_codes", :force => true do |t|
     t.string   "code"
     t.boolean  "taken",      :default => false

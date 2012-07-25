@@ -31,7 +31,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'fog'
-gem 'therubyracer'
+gem 'therubyracer', :platform => :ruby 
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
@@ -53,9 +53,9 @@ end
 
 
 #group :test, :development do 
-#	gem 'rspec-rails', '2.8'
-#	gem 'factory_girl_rails'
-#	gem 'capybara'
-#	gem 'guard-rspec'
+	gem 'rspec-rails', '2.8'
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'guard-rspec'
 #end
 
