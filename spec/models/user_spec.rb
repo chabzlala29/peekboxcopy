@@ -1,17 +1,30 @@
 require 'spec_helper'
 
 describe User do
-	describe "#register_new_user" do
-		let(:user) { Factory(:username => 'maryon' ) }
-		it "new user email should not have existing email registered" do 
-			#vid = Video.new
-			#vid.category.count.should == 1 
-		end
+  before do
+    @user = User.find_by_username("user1")
+  end
 
-		it "new user username should not have existing username" do 
-			new_user = User.new(:username => 'maryon')
-			User.register(new_user).should be_nil
-		end
+	describe "validation" do
+    it "should validate unique email" do
+      expect{
+        User.create!(:email => @user.email, :username => "unique-username", :password => "password")
+      }.to raise_error
+    end
 
-	end
+    it "should validate unique username" do
+      expect{
+        User.create!(:email => "user@user.com" , :username => @user.username, :password => "password")
+      }.to raise_error
+    end
+
+  end
+
+  describe "messages" do
+    it "should be ordered according to date created" do
+      @user.messages[0].message.should == "sent 1 week ago"
+      @user.messages[1].message.should == "sent 3 days ago"
+      @user.messages[2].message.should == "sent yesterday"
+    end
+  end
 end
