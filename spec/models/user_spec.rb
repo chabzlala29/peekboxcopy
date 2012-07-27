@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe User do
   before do
-    @user = User.find_by_username("user1")
+    @user  = User.find_by_username("user1")
+    @user5 = User.find_by_username("user5")
    
     @userfriends1 = User.find_by_id(@user.friendships[0].friend_id)
     @userfriends2 = User.find_by_id(@user.friendships[1].friend_id)
@@ -22,35 +23,30 @@ describe User do
         User.create!(:email => "user@user.com" , :username => @user.username, :password => "password")
       }.to raise_error
     end
-    
-    
-
-
-      
-
-   
-
   end
 
   describe "messages" do
     it "should be ordered according to date created" do
-    
-        @user.messages[0].message.should == "sent yesterday"
-        @user.messages[1].message.should == "sent 3 days ago"
-        @user.messages[2].message.should == "sent 1 week ago"
-
-      
+      @user.messages[0].message.should == "sent yesterday"
+      @user.messages[1].message.should == "sent 3 days ago"
+      @user.messages[2].message.should == "sent 1 week ago"
     end
   end
 
   describe "friend" do
-
-
     it "should be something" do
-        @userfriends1.username.should == "user2"
-        @userfriends2.username.should == "user3"
-        @userfriends3.username.should == "user4"
+      @userfriends1.username.should == "user2"
+      @userfriends2.username.should == "user3"
+      @userfriends3.username.should == "user4"
     end
 
+  end
+
+  describe "#add_friend" do
+    it "should reciprocate friendships" do
+      @user.add_friend(@user5)
+      @user.friends.should  include(@user5)
+      @user5.friends.should include(@user)
+    end
   end
 end

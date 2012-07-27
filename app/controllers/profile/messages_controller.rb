@@ -1,6 +1,6 @@
 class Profile::MessagesController < Profile::ProfileController
   def inbox
-		@messages = current_user.messages.from_inbox
+		@messages = Message.get_inbox(current_user)
   end
 
   def show
@@ -37,7 +37,7 @@ class Profile::MessagesController < Profile::ProfileController
   end
 
   def sent
-		@messages = current_user.messages.from_sent
+		@messages = current_user.messages
   end
 
   def compose

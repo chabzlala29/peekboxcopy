@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	validates_format_of :username, :with => /^[-a-z0-9]+$/
 
 	has_many :wall_post
-	has_many :messages,  :order => "created_at DESC"
+	has_many :messages,  :order => "created_at DESC", :dependent => :destroy
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
 
@@ -54,7 +54,20 @@ class User < ActiveRecord::Base
 	def is_stranger(user) 
 		@friendship = Friendship.where(:user_id => user, :friend_id => self.id).first
 		@friendship.blank?
-	end
+  end
+
+  def add_friend(friend)
+    self.friendships.create!(:friend => friend)
+    friend.friendships.create!(:friend => self)
+  end
+
+  def friends_with?(friend)
+    #TODO
+  end
+
+  def remove_friend(friend)
+    #TODO
+  end
 
 	def is_bookmarked(event) 
 		@bookmarked = Bookmark.where(:user_id => self.id, :event_id => event.id).first
