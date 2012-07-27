@@ -3,6 +3,11 @@ require 'spec_helper'
 describe User do
   before do
     @user = User.find_by_username("user1")
+   
+    @userfriends1 = User.find_by_id(@user.friendships[0].friend_id)
+    @userfriends2 = User.find_by_id(@user.friendships[1].friend_id)
+    @userfriends3 = User.find_by_id(@user.friendships[2].friend_id)
+    
   end
 
 	describe "validation" do
@@ -12,19 +17,40 @@ describe User do
       }.to raise_error
     end
 
-    it "should validate unique username" do
+   it "should validate unique username" do
       expect{
         User.create!(:email => "user@user.com" , :username => @user.username, :password => "password")
       }.to raise_error
     end
+    
+    
+
+
+      
+
+   
 
   end
 
   describe "messages" do
     it "should be ordered according to date created" do
-      @user.messages[0].message.should == "sent 1 week ago"
-      @user.messages[1].message.should == "sent 3 days ago"
-      @user.messages[2].message.should == "sent yesterday"
+    
+        @user.messages[0].message.should == "sent yesterday"
+        @user.messages[1].message.should == "sent 3 days ago"
+        @user.messages[2].message.should == "sent 1 week ago"
+
+      
     end
+  end
+
+  describe "friend" do
+
+
+    it "should be something" do
+        @userfriends1.username.should == "user2"
+        @userfriends2.username.should == "user3"
+        @userfriends3.username.should == "user4"
+    end
+
   end
 end
