@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	validates_format_of :username, :with => /^[-a-z0-9]+$/
 
 	has_many :wall_post
-	has_many :messages,  :order => "created_at"
+	has_many :messages,  :order => "created_at DESC"
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
 
