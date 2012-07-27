@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 	has_many :video_marked, :through => :video_bookmarks
 	has_many :video_bookmarks, :dependent => :destroy
 
-	has_many :friends, :through => :friendships
+	has_many :friends, :through => :friendships, :order => "username"
 	has_many :friendships, :dependent => :destroy
 	#has_many :friends, :through => :friendships, :conditions => "status = 'accepted'"
 	#has_many :requested_friends, :through => :friendships, :source => :friend, :conditions => "status = 'requested'", :order => :created_at
