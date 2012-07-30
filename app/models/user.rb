@@ -61,12 +61,27 @@ class User < ActiveRecord::Base
     friend.friendships.create!(:friend => self)
   end
 
-  def friends_with?(friend)
-    #TODO
+  def friends_with?(user, friend)
+	user1 = User.find_by_username(user.username)
+	friend1 = Friendship.find(:all, :conditions => {:user_id => user1.id, :friend_id => friend.id})
+
+	if friend1.present?
+	  return true
+	else
+	  return false
+	end
   end
 
-  def remove_friend(friend)
-    #TODO
+  def remove_friend(user, friend)
+    user1 = User.find_by_username(user.username)
+	friend1 = Friendship.where(:user_id => user.id, :friend_id => friend.id)
+	friend1.destroy_all
+	
+	if friend1.present?
+	  return true
+	else
+	  return false
+	end
   end
 
 	def is_bookmarked(event) 
