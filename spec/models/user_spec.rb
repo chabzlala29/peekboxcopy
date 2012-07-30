@@ -49,4 +49,21 @@ describe User do
       @user5.friends.should include(@user)
     end
   end
+  
+  describe "#friends_with?" do
+	it "should be friends with" do
+	  result = @user.friends_with?(@user,@user5)
+		
+	  result.should == true
+	end
+  end
+  
+  describe "#remove_friend" do
+    it "should delete a friend" do
+      result = @user.remove_friend(@user,@user5)
+		
+      result.should == false
+		
+	end
+  end
 end
