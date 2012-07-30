@@ -9,6 +9,7 @@ module Factory
     user1.add_friend(user2)
     user1.add_friend(user3)
     user1.add_friend(user4)
+    user1.add_friend(user5)
 
     user1.messages.create!(:friend => user2, :message => "sent 1 week ago", :created_at => 1.week.ago)
     user1.messages.create!(:friend => user2, :message => "sent 3 days ago", :created_at => 3.days.ago)
