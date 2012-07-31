@@ -22,7 +22,7 @@ class Profile::MessagesController < Profile::ProfileController
   end
 
   def sent
-		@messages = current_user.sent_messages
+		@messages = current_user.sent_messages.page(params[:page]).per(20)
   end
 
   def compose

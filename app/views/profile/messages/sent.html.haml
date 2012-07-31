@@ -6,6 +6,7 @@
 %br{:style=>"clear:both"}
 %h3
 	Sent
+=paginate @messages
 %div#wall
 	%div.post
 		-@messages.each do |message|
@@ -26,3 +27,4 @@
 								=message.message
 						%br{:style => "clear:both"}
 
+=paginate @messages
