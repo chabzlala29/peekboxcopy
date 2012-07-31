@@ -1,0 +1,46 @@
+%div{:style => "float:left", :width => "200px"}
+	=form_for(@user, :url => save_profile_user_index_path, :html => {:multipart => true} ) do |u|
+		%br
+		= u.hidden_field :id
+		%br
+		%label{:for => "shoutout"} Shoutout:
+		%br
+		= u.text_field :shoutout
+		%br
+		%label{:for => "first_name"} First Name:
+		%br
+		= u.text_field :first_name
+		%br
+		%label{:for => "last_name"} Last Name:
+		%br
+		= u.text_field :last_name
+		%br
+		%label{:for => "location"} Location Name:
+		%br
+		= u.text_field :location
+		%br
+		%label{:for => "occupation"} Occupation:
+		%br
+		= u.text_field :occupation
+		%br
+		%label{:for => "sex"}  Sex:
+		%br
+		%label{:for => "sex_male"}  Male:
+		= u.radio_button( :sex, "male")
+		%label{:for => "sex_female"}  Female:
+		= u.radio_button( :sex, "female")
+		%br
+		%label{:for => "website"} Website:
+		%br
+		= u.text_field :website
+		%br
+		%label{:for => "profilepic"} Profile Picture:
+		%br
+		= u.file_field :profilepic
+		%br
+		= hidden_field_tag(:cx)
+		= hidden_field_tag(:cy)
+		= hidden_field_tag(:h)
+		= hidden_field_tag(:w)
+		= submit_tag "Save Information!"
+%br{:style=>"clear:both"}

@@ -1,0 +1,25 @@
+%div#page-info
+	%span#title
+		All Video Ads
+	%span#desc
+%br{:style => "clear:both;"}
+-unless @videoAds == nil
+	%div
+		=paginate @videoAds
+	%div#banner_list
+		%table
+			%tr
+				%th
+					Video Ads Thumbnails
+				%th
+				-@videoAds.each do |videoAd|
+					%tr
+						%td	
+							-if videoAd.processed?
+								=link_to (image_tag videoAd.thumbnail, :class => "thumbnails"), admin_video_ad_path(videoAd.id)
+							-else
+								%p
+									Video Ad is still Processing
+						%td	
+							= link_to "delete",  admin_video_ad_path(videoAd.id), :method => :delete 
+%br{:style=>"clear:both"}

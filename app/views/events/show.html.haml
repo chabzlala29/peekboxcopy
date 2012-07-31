@@ -1,0 +1,45 @@
+%div#page-info
+	%span#title
+		=@event.title
+	%span#desc
+%div#events-page
+	%br{:style => "clear:both"}
+	-if @event.image?
+		%div#event-page-image
+			= image_tag @event.image_url(:event_page).to_s
+		%div{:style => "width:620px;margin: 0 auto;"}
+			%div#sharethis{:style => "float:left;text-align:right;margin:0 auto;"}
+				%span.st_facebook_hcount{:displayText => "Facebook"}
+				%span.st_twitter_hcount{:displayText => "Tweet"}
+				%span.st_googleplus_hcount{:displayText => "google plus"}
+				%span.st_sharethis_hcount{:displayText => "shareThis"}
+			-unless current_user == nil
+				-if current_user.is_bookmarked(@event)
+					= button_to "", {:controller => "profile/bookmark", :method => "post", :event => @event.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px;", :class => "myPeekButton"}
+				-else
+					= button_to "", {:controller => "profile/bookmark", :action => "unbookmark",  :id => @event.id}, {:style => "float:right;margin:0px -10px 0px 0px;padding-top:3px", :class => "unPeekButton", :type => "image"}
+			%div{:style => "float:right"}
+				%p{:style => "margin:0px 5px 0px 5px"}
+					Peeks:
+					-if @event.bookmarks == nil
+						= "0"
+					-else
+						= @event.bookmarks.count
+		%br{:style => "clear:both"}
+	-unless current_user== nil
+		-if current_user.admin || current_user = @event.user
+			%div
+				=link_to "Edit", edit_profile_event_path(@event.id)
+			%div
+				=link_to "Delete", profile_event_path(@event.id), :method => :delete, :confirm => "Are you sure?"
+	%p
+		Location:
+		=@event.location
+	%p
+		%p
+			Date:
+			=@event.date
+	%p
+		%p
+			Description:
+			=simple_format(auto_link(@event.description))

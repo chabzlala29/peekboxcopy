@@ -1,0 +1,68 @@
+%div#page-info
+	%span#title
+		=@video.title
+	%span#desc
+		Viewing 
+		=@video.category.title
+		videos
+-if @video.processed?
+	%div#video-show-page
+		%p
+			-if @videoAd != nil 
+				= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element", :ads => @videoAd.media)
+			-else
+				= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
+		%p
+		%div#sharethis{:style => "float:left"}
+			%span.st_facebook_hcount{:displayText => "Facebook"}
+			%span.st_twitter_hcount{:displayText => "Tweet"}
+			%span.st_googleplus_hcount{:displayText => "google plus"}
+			%span.st_sharethis_hcount{:displayText => "shareThis"}
+		%div{:style => "float:left"}
+			%p{:style => "margin:0px 5px 0px 5px"}
+				Peeks:
+				-if @video.video_bookmarks == nil
+					= "0"
+				-else
+					= @video.video_bookmarks.count
+		-unless current_user == nil
+			-if current_user.is_video_bookmarked(@video)
+				= button_to "", {:controller => "profile/video_bookmark", :method => "post", :video => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px;", :class => "myPeekButton"}
+			-else
+				= button_to "", {:controller => "profile/video_bookmark", :action => "unbookmark",  :id => @video.id}, {:style => "margin:0px -10px 0px 0px;padding-top:3px", :class => "unPeekButton"}
+			
+		%br{:style => "clear:both"}
+		-unless current_user == nil
+			-if current_user.admin || current_user == @video.user
+				=link_to "Edit", edit_profile_video_path(@video.id)
+				=link_to "Delete", profile_video_path(@video.id), :method => :delete, :confirm => "Are you sure?"
+		%br{:style => "clear:both"}
+		%p
+			=@video.description
+		%p
+			Uploaded By:
+		%div#video-owner
+			%div#profilepic
+				-unless @video.user.profilepic_url(:profile_pic) == nil
+					=image_tag @video.user.profilepic_url(:profile_pic).to_s
+			%div#profile-information
+				%p
+					%span#bold
+						Posted on:
+					=@video.created_at
+				%p
+					%span#bold
+						By:
+					=@video.user.username
+				%p
+					%span#bold
+						Posted in
+					%span#category
+						=@video.category.title
+			%br{:style => "clear:both"}
+		=render "comment"
+- else
+	%p
+		while we process your video you can check out other Video from our list...
+
+	= link_to "Video Gallery",videos_path

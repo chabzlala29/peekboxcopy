@@ -1,0 +1,22 @@
+%div#footer
+	%div#inside_footer
+		%div#panels
+			%div#links
+				%h2 CATEGORIES
+				%ul.link
+					%li.item{:style => "border-top:none"}
+						= link_to 'Home', root_path 
+					%li.item
+						= link_to 'Video', videos_path
+					%li.item
+						= link_to 'Gallery', albums_path
+					%li.item
+						= link_to 'Events', events_path
+					%li.item
+						= link_to 'Help', help_path 
+					%li.item{:style => "border-bottom:none"}
+						= link_to 'Company', company_path
+			%div#welikeyou
+				%h2 WE LIKE YOU
+				%p 
+					if you like us too, hop over to facebook for exclusive news and offers

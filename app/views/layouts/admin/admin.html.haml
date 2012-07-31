@@ -1,0 +1,52 @@
+!!! 5
+%head
+	%title 
+		Peekbox
+	= stylesheet_link_tag "application"
+	= javascript_include_tag "application"
+	= csrf_meta_tags
+	%link{:rel => "shortcut icon", :href => "assets/pb/favicon.jpg"}
+%body
+	%div#wrapper
+		%div#header
+			%div#wrapper
+				%div#sign_status
+					-if user_signed_in?
+						%p
+							= link_to "Dashboard" , profile_path
+							|	
+							= link_to 'Sign out', destroy_user_session_path, :method => :delete
+					-else
+						= link_to 'Sign in', new_user_session_path
+						or
+						= link_to 'Register', new_user_registration_path
+		%div#menu_wide
+			%div#menu
+				%div#logo{:style => "float:left"}
+					=link_to (image_tag "logo.png"), root_path
+				#links-container
+					= render :partial => "layouts/menu"
+		#container_wide
+			#container
+				%br{:style => "clear:both"}
+				%div#page-info
+					%h2
+						Welcome 
+						=link_to current_user.username, other_user_path(current_user.username)
+					%h2
+						Peekbox User Dashboard 
+				%br{:style => "clear:both"}
+				=render "layouts/profile/profile_menu"
+				-unless current_user.admin == false
+					=render "layouts/profile/administrator_menu"
+				%div#dashboard
+				%div#flash
+					%span.notice
+						= notice
+					%span.alert
+						= alert
+				= yield
+				%br{:style => "clear:both"}
+		= render :partial => "layouts/twitter"
+		= render :partial => "layouts/footer"
+		= render :partial => "layouts/bottom"

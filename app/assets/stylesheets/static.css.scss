@@ -1,0 +1,58 @@
+// Place all the styles related to the static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+p.emphasize {
+	font-weight:bold;
+}
+
+h2#title {
+	border-bottom: 1px solid #d7d7d7;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	font-size:24px;
+	font-weight:lighter;
+}
+
+h2, h4 {
+	line-height:1.4em;
+	color: #51565B;
+}
+
+div#company_profile {
+	float:left;
+	width:450px;
+}
+div#user_guidelines {
+	float:right;
+	width:450px;
+}
+
+p {
+	color: #51565B;
+}
+
+
+span.firstcharacter { 
+	float: left; 
+	font-size: 75px; 
+	line-height: 60px; 
+	padding-top: 4px; 
+	padding-right: 8px; 
+	padding-left: 3px; 
+}
+
+#form-container {
+	width:450px;
+	float:left;
+}
+#location-description {
+	width:450px;
+	float:right;
+	height:600px;
+	#contact-information {
+		margin-top:375px;
+		clear:both;
+		vertical-align:text-bottom;
+	}
+}

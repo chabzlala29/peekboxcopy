@@ -1,0 +1,10 @@
+= form_for @videoAd, :url => admin_video_ads_path, :html => {:multipart => true} do |video_form| 
+	%label{:for => "title"} Title:
+	%br
+	= video_form.text_field :title
+	%br
+	%label{:for => "Media"} File:
+	%br
+	= video_form.file_field :media
+	%br
+	= submit_tag "Add Video Ads"

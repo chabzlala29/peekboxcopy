@@ -1,0 +1,13 @@
+%div
+	=paginate @videos
+%div#video_list
+	-@videos.each do |vid|
+		%div#video_each
+			%div.thumbnail-wrapper
+				=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), edit_profile_video_path(vid.id)
+				%div.item-title-wrapper
+					%p.item-title
+						=vid.title
+			%p
+				=link_to "delete", profile_video_path(vid.id), :method => :delete
+%br{:style=>"clear:both"}

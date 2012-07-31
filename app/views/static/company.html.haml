@@ -1,0 +1,31 @@
+%div#page-info
+	%span#title
+		Company
+	%span#desc
+		About the Pilipinas Productions
+%br{:style => "clear:both;"}
+%div#form-container
+	=form_for :contact, :url => contact_path do |form|
+		%br
+		%label{:for => "name"} Name
+		%br
+		=form.text_field :name
+		%br
+		%label{:for => "email_address"} Email
+		%br
+		=form.text_field :email_address
+		%br
+		%label{:for => "website"} Website
+		%br
+		=form.text_field :website
+		%br
+		%label{:for => "comment"} Comments
+		%br
+		=form.text_area :comment
+		%br
+		= submit_tag "Send"
+
+%div#location-description
+	%div#contact-information
+		=render "contact"
+%br{:style => "clear:both"}

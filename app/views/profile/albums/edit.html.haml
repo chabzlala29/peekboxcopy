@@ -1,0 +1,34 @@
+- if @album.image?
+	%div{:style => "wdith:100%; margin 0 auto; text-align:center"}
+		%h6
+			Current Album cover
+		= image_tag @album.image_url(:album_cover)
+
+
+=form_for @album, :url => profile_album_path, :html => {:multipart => true} do |album| 
+	-if @album.errors.any?
+		%div#error_explanation
+			%h2
+				=pluralize(@album.errors.count, "error")
+				Prohibited this Album from being saved
+			%ul
+				-@album.errors.full_messages.each do |msg|
+					%li
+						=msg
+	%label{:for => "title"} Title:
+	%br
+	= album.text_field :title
+	%br
+	%label{:for => "description"} description:
+	%br
+	= album.text_area :description
+	%br
+	%label{:for => "image"} Album Cover:
+	= album.file_field :image
+	%br
+	-if current_user.admin
+		%label{:for => "featured"} Feature:
+		%br
+		= album.check_box :featured
+		%br
+	= submit_tag "Save Image"

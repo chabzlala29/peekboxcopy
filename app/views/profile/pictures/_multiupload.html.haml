@@ -1,0 +1,32 @@
+- key = Rails.application.config.session_options[:key]
+
+= content_for :scripts do
+	:javascript
+		var upload_params = {
+			'#{key}' : '#{cookies[key]}',
+			'#{request_forgery_protection_token}' : '#{form_authenticity_token}',
+			'_http_accept': 'application/javascript'
+		};
+
+		var url = '#{multiupload_profile_album_pictures_path(@album.id)}';
+		$('input#photo_image').uploadify({
+			'uploader'     : '#{multiupload_profile_album_pictures_path(@album.id)}',
+			'swf' 		     : '#{asset_path("uploadify.swf")}',
+			'script'       : url,
+			'checkExisting'   : false,
+			'fileDataName' : 'photo[image]',
+			'fileExt'      : '*.png;*.jpg;*.gif',
+			'cancelImage'    : '#{asset_path("uploadify-cancel.png")}',
+			'multi'        : true,
+			'fileObjName'     : 'picture[image]',
+			'preventCaching'  : false,
+			'postData'   : upload_params,
+			'auto'         : true,
+			'onComplete'   : function(e, id, obj, response, data) {
+				$('#photos').append(response);
+			}
+		});
+
+=fields_for Picture.new do |f|
+	=f.file_field :image, :rel => profile_album_pictures_path(@album), :id => "photo_image"
+

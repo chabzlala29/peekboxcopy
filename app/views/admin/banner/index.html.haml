@@ -1,0 +1,22 @@
+%div#page-info
+	%span#title
+		All Banners
+	%span#desc
+		Viewing Banners
+%br{:style => "clear:both;"}
+-unless @banners == nil
+	%div
+		=paginate @banners
+	%div#banner_list
+		%table
+			%tr
+				%th
+					Bannner thumbnail
+				%th
+				-@banners.each do |banner|
+					%tr
+						%td	
+							=link_to (image_tag banner.image_url(:thumb), :class => "thumbnails"), admin_banner_path(banner.id)
+						%td	
+							= link_to "delete",  admin_banner_path(banner.id), :method => :delete 
+%br{:style=>"clear:both"}

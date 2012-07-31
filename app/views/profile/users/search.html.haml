@@ -1,0 +1,23 @@
+%div#page-info
+	%span#title
+		Users
+	%span#desc
+		Viewing searched Users
+%br{:style => "clear:both;"}
+%div
+	= render "profile/friends/search_form"
+%div#friend_list
+	-@users.each do |friend|
+		%div#each
+			%p#thumb
+				%div.thumbnail-wrapper
+					-if friend.profilepic?
+						= link_to (image_tag friend.profilepic_url(:profile_pic_thumb), :style => "width:200px", :class => "thumbnails" ,:alt => "#{friend.username.to_s}"), other_user_path(friend.username)
+					- else
+						= link_to (image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"), other_user_path(friend.username)
+					%div.item-title-wrapper
+						%p.item-title
+							=friend.username
+
+%br{:style=>"clear:both"}
+

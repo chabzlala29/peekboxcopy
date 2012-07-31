@@ -1,0 +1,30 @@
+= form_for :video, :url => profile_videos_path, :html => {:multipart => true} do |video_form| 
+	%label{:for => "title"} Title:
+	%br
+	= video_form.text_field :title
+	%br
+	%label{:for => "Category"} Category:
+	%br
+	= collection_select(:video, :category_id, @all_category, :id, :title)
+	%br
+	%label{:for => "contest"} Contest:
+	%span.optional
+		(optional)
+	%br
+	= collection_select(:video, :contest_id, @contests, :id, :title, {:include_blank => "Join A Contest"})
+	%br
+	%label{:for => "eligibility_code"} Eligibility Code:
+	%span.optional
+		(optional)
+	%br
+	= video_form.text_field :eligibility_code
+	%br
+	%label{:for => "Description"} Description:
+	%br
+	= video_form.text_area :description
+	%br
+	%label{:for => "Media"} File(20MB only, upgrading soon!):
+	%br
+	= video_form.file_field :media
+	%br
+	= submit_tag "Add Video"

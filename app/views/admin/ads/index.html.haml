@@ -1,0 +1,35 @@
+%div#page-info
+	%span#title
+		All Ads
+	%span#desc
+		Viewing Ads
+%br{:style => "clear:both;"}
+%div
+	=paginate @ads
+%div#ads_list
+	%table
+		%tr
+			%th
+				Bannner thumb
+			%th
+				Title
+			%th
+				Location
+			%th
+				Url
+			%th
+				Control
+			-@ads.each do |ads|
+				%tr
+					%td	
+						=link_to (image_tag ads.banner_url(:thumb), :class => "thumbnails" ,:alt => "#{ads.title.to_s}_#{ads.title.to_s}"), admin_ad_path(ads.id)
+					%td	
+						=ads.title
+					%td	
+						=ads.location
+					%td	
+						=ads.url
+					%td	
+						= link_to "edit",  admin_ad_path(ads.id)
+						= link_to "delete",  admin_ad_path(ads.id), :method => :delete 
+%br{:style=>"clear:both"}

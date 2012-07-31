@@ -1,0 +1,20 @@
+%div#page-info
+	%span#title
+		My peek
+	%span#desc
+-if @marked.empty?
+	%p
+		No Videos Found!
+-else
+%div#video_list
+	%br{:style => "clear:both"}
+	-@marked.each do |vid|
+		%div#video_each
+			%div.thumbnail-wrapper
+				=link_to (image_tag vid.thumbnails.first.url, :class => "thumbnails" ,:alt => "#{vid.category.title.to_s}_#{vid.title.to_s}"), video_path(vid.id)
+				%div.item-title-wrapper
+					%p.item-title
+						=vid.title
+				%p.item-description
+					= truncate(vid.description, :length => 30, :omission =>"...")
+		%br{:style => "clear:both"}

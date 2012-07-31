@@ -1,0 +1,11 @@
+%div#page-info
+	%span#title
+		Eligibility Code
+	%span#desc
+		Upload CSV
+=form_for :eligibility_code, :url => admin_eligibilities_path, :html => { :multipart => true } do |code|
+	%label_for(:file)
+	%br
+	=code.file_field :file
+	%br
+	=submit_tag "Upload"

@@ -1,0 +1,39 @@
+%div
+	%script{:type => "text/javascript" , :charset => "utf-8"}
+		jQuery(function($) {
+		$('#profilepicture').Jcrop( {
+		onChange: setCoords,
+		onSelect:    setCoords,
+		bgColor:     'black',
+		bgOpacity:   .4,
+		aspectRatio: 250 / 331	
+		});
+		});
+		function setCoords(c) {
+		var rx = 100/c.w;
+		var ry = 100/c.h;
+		var lw = $('#profilepicture').width();
+		var lh = $('#profilepicture').height();
+		= "var ratio = #{ @user.profile_geometry[:width] } / lw ";
+		$("#cx").val(Math.round(c.x * ratio));
+		$("#cy").val(Math.round(c.y * ratio));
+		$("#w").val(Math.round(c.w * ratio));
+		$("#h").val(Math.round(c.h * ratio));
+
+		};
+	%div{:style => "width:100%"}
+		%div{:width => "700px", :height => "auto"}
+			%h6
+				Crop Profile Tool
+			=image_tag @user.profilepic_url(:default_photo_limit).to_s, :id => "profilepicture"
+		%br{:style => "clear:both"}
+
+
+=form_for(@user, :url => profile_crop_path, :html => {:multipart => true} ) do |u|
+	= u.hidden_field :id
+	= hidden_field_tag(:cx)
+	= hidden_field_tag(:cy)
+	= hidden_field_tag(:h)
+	= hidden_field_tag(:w)
+	= submit_tag "Save"
+%br{:style=>"clear:both"}
