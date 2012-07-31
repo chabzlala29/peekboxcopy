@@ -5,6 +5,7 @@
 		Viewing Inbox Messages
 %br{:style=>"clear:both"}
 %h3
+=paginate @messages
 %div#wall
 	%div.post
 		-@messages.each do |message|
@@ -25,3 +26,4 @@
 								=message.message
 						%br{:style => "clear:both"}
 		=link_to "Reply", compose_profile_messages_path
+=paginate @messages

@@ -2,7 +2,8 @@ class Profile::MessagesController < Profile::ProfileController
 
 
   def inbox
-		@messages = current_user.received_messages
+		@messages = current_user.received_messages.page(params[:page]).per(20)
+
   end
 
   def show
