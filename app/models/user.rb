@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
 	validates_format_of :username, :with => /^[-a-z0-9]+$/
 
 	has_many :wall_post
-	has_many :messages,  :order => "created_at DESC", :dependent => :destroy
+	has_many :sent_messages,     :class_name => "Message", :order => "created_at DESC", :dependent => :destroy #SENT!!
+  has_many :received_messages, :class_name => "Message", :order => "created_at DESC", :foreign_key => "friend_id"
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
 
