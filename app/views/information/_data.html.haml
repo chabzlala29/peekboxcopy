@@ -1,0 +1,31 @@
+%div#information
+	%div#shoutout.info
+		%b
+			Shoutout: &nbsp;
+		=@user.shoutout
+	%br
+	%div#name.info
+		%b
+			=@user.first_name
+			=@user.last_name
+	%div#sex.info
+		%b
+			Sex:&nbsp;
+		=@user.sex
+	%div#location.info
+		%b
+			location:&nbsp;
+		=@user.location
+	%div#date-joined.info
+		%b
+			Date joined:&nbsp;
+		=@user.created_at
+	%br
+	%div#pb-site.info
+		%b
+			Peekbox site: &nbsp;
+		= auto_link("http://#{request.host+request.fullpath}")
+	%div#website.info
+		%b
+			website:&nbsp;
+		=auto_link(@user.website)

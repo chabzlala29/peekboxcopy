@@ -1,0 +1,34 @@
+=render "slide_banner"
+- unless @ad == nil
+	%div.ads{:style => "float:right;"}
+		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
+		%br{:style => "clear:both;"}
+		%div#categories{:style => "width:233px;clear:both"}
+			%h3
+				Video Categories
+			%br{:style => "clear:both;"}
+			= render :partial => "layouts/sidebar_categories"
+		%br{:style => "clear:both;"}
+
+%div#home-thumbs
+	%h3
+		Featured Events
+	%div#thumb_list
+		=render "featured_events"
+	%br{:style => "clear:both;"}
+	%h3
+		Video Picks
+	%div#thumb_list
+		=render "featured_videos"
+	%br{:style => "clear:both;"}
+	%h3
+		Featured Albums
+	%div#thumb_list
+		=render "featured_albums"
+	%br{:style => "clear:both;"}
+	%h3
+		Recently Uploaded Videos
+	%div#thumb_list
+		=render "recent_videos"
+	%br{:style => "clear:both;"}
+%br{:style => "clear:both;"}

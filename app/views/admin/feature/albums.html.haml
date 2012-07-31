@@ -1,0 +1,15 @@
+%div#page-info
+	%span#title
+		All Featured Albums
+	%span#desc
+%br{:style => "clear:both;"}
+%div
+	-@albums.each do |album|
+		%div#each
+			%div#album_cover.thumbnail-wrapper
+				=link_to (image_tag album.image_url(:album_thumb).to_s), album_path(album) 
+				%div#album_title.item-title-wrapper
+					%p.item-title
+						=album.title	
+%br{:style => "clear:both"}
+=paginate @albums

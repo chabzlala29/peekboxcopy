@@ -1,0 +1,25 @@
+%h6
+	Current Video
+%p
+	= video_tag(@video.media, :controls => true, :autobuffer => true, :width => "640", :id => "video-element")
+%br{:style => "clear:both"}
+= form_for @video, :url => profile_video_path, :html => {:multipart => true} do |video_form| 
+	= video_form.hidden_field :id
+	%label{:for => "title"} Title:
+	%br
+	= video_form.text_field :title
+	%br
+	%label{:for => "Category"} Category:
+	%br
+	= collection_select(:video, :category_id, @all_category, :id, :title)
+	%br
+	%label{:for => "Description"} Description:
+	%br
+	= video_form.text_area :description
+	%br
+	-if current_user.admin
+		%label{:for => "featured"} Feature:
+		%br
+		= video_form.check_box :featured
+		%br
+	= submit_tag "Save Video"

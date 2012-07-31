@@ -1,0 +1,23 @@
+%div#page-info
+	%span#title
+		Friends of 
+		=@user.username
+	%span#desc
+		&nbsp;
+%br{:style => "clear:both;"}
+%div
+	=paginate @friends
+%div#friend_list
+	-@friends.each do |friend|
+		%div#each
+			%p#thumb
+				%div.thumbnail-wrapper
+					-if friend.profilepic?
+						=link_to (image_tag friend.profilepic_url(:profile_pic_thumb), :class => "thumbnails" ,:alt => "#{friend.username.to_s}_#{friend.username.to_s}"), other_user_path(friend.username)
+					- else
+						= link_to (image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"), other_user_path(friend.username)
+					%div.item-title-wrapper
+						%p.item-title
+							=friend.username
+
+%br{:style=>"clear:both"}

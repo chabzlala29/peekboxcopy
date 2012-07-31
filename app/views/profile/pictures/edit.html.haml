@@ -1,0 +1,29 @@
+%div#picture-page
+	-if @picture.image?
+		%div#picture-page-image
+			= image_tag @picture.image_url(:picture_page).to_s
+	%p
+		Title:
+	%p
+		=@picture.title
+	%p
+		Description:
+	%p
+		=@picture.description
+
+%br{:style => "clear:both"}
+%hr
+	%p
+		Edit Details
+
+= form_for @picture, :url => profile_album_picture_path(@album.id), :html => {:multipart => true} do |picture_form| 
+	%label{:for => "title"} Title:
+	%br
+	=picture_form.text_field :title
+	%br
+	%label{:for => "Description"} Description:
+	%br
+	= picture_form.text_area :description
+	%br
+	= submit_tag "Update Picture"
+

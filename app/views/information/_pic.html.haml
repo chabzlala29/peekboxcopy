@@ -1,0 +1,7 @@
+%div#pic
+	%div#profile_pic
+		-if @user.profilepic?
+			= image_tag @user.profilepic_url(:profile_pic)
+		-else
+			= image_tag "no-profile-pic.jpg" , :style => "height:331px;width:250px;"
+

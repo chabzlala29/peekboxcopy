@@ -1,0 +1,34 @@
+
+= form_for @event, :url => profile_events_path, :html => {:multipart => true} do |event| 
+	=render "shared/error_messages", :object => @event
+	%label{:for => "title"} Title:
+	%br
+	= event.text_field :title
+	%br
+	%label{:for => "image"} File:
+	%br
+	= event.file_field :image
+	%br
+	%label{:for => "date"} Date:
+	%br
+	= event.text_field :date
+	%br
+	%label{:for => "location"} Location:
+	%br
+	= event.text_field :location
+	%br
+	%label{:for => "description"} Description:
+	%br
+	= event.text_area :description
+	%br
+	-if current_user.admin
+		%label{:for => "featured"} Feature:
+		%br
+		= event.check_box :featured
+		%br
+		%label{:for => "special"} Special:
+		%br
+		= event.check_box :special
+		%br
+	%br
+	= submit_tag "Add Event"

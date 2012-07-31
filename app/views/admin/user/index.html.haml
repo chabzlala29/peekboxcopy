@@ -1,0 +1,36 @@
+%div#page-info
+	%span#title
+		All Users
+	%span#desc
+		Viewing Users
+%br{:style => "clear:both;"}
+%div
+	=paginate @users
+%div#user_list
+	-@users.each do |user|
+		%tr
+			%td	
+				%div#each
+					%p#thumb
+						%div.thumbnail-wrapper
+							-if user.profilepic?
+								= link_to (image_tag user.profilepic_url(:profile_pic_thumb), :style => "width:200px", :class => "thumbnails" ,:alt => "#{user.username.to_s}"), other_user_path(user.username)
+							- else
+								= link_to (image_tag "no-profile-pic.jpg", :style => "height:114px;width:200px;"), other_user_path(user.username)
+							%div.item-title-wrapper
+								%p.item-title
+									=user.username
+							-unless user.banned?
+								= link_to "Ban",  ban_admin_user_index_path(user.id)
+								%br{:style=>"clear:both"}
+							=link_to "Delete User", delete_user_admin_user_index_path(user.id), :confirm => "Are you sure to delete user?"
+							%br{:style=>"clear:both"}
+							-unless user.admin?
+								=link_to "Make Admin", make_admin_admin_user_index_path(user.id), :confirm => "Are you sure to make admin?"
+								%br{:style=>"clear:both"}
+							-if user.admin?
+								=link_to "Make Normal", make_normal_admin_user_index_path(user.id), :confirm => "Are you sure to make admin normal?"
+								%br{:style=>"clear:both"}
+							-user.inspect
+				
+%br{:style=>"clear:both"}

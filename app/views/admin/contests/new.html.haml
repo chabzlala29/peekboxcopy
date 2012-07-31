@@ -1,0 +1,26 @@
+%div#page-info
+	%span#title
+		Add Contest
+	%span#desc
+		Viewing Contest
+
+=form_for @contest, :url => admin_contests_path do |contest|
+	%label_for(:title)
+	%br
+	=contest.text_field :title
+	=submit_tag "add contest"
+
+%div#ads_list
+	%table
+		%tr
+			%th
+				Title
+			%th
+				Created at
+			-@contests.each do |contest|
+				%tr
+					%td	
+						=link_to contest.title, edit_admin_contest_path(contest)
+					%td	
+						=contest.created_at
+%br{:style=>"clear:both"}

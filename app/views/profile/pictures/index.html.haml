@@ -1,0 +1,24 @@
+%h1
+	Pictures in "#{link_to @album.title,edit_profile_album_path(@album.id) }" Album
+-if @pictures.empty?
+	%p 
+		No Picture Available
+-else
+	-@pictures.each do |pic|
+		%div#each
+			%div.thumbnail-wrapper
+				=link_to (image_tag pic.image_url(:picture_thumb).to_s), edit_profile_album_picture_path(@album.id, pic.id)
+				%div#album_title.item-title-wrapper
+					%p.item-title
+						-if pic.title?
+							=pic.title
+						-else
+							="..."
+			%div
+				=link_to "delete", profile_album_picture_path(pic.album, pic.id), :method => :delete 
+
+= render "singleUpload"
+%hr
+	%p
+		Multi Picture Upload
+	= render "multiupload"

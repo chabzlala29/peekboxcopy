@@ -1,0 +1,20 @@
+%div#page-info
+	%span#title
+		My peek
+	%span#desc
+-if @marked.empty?
+	%p
+		No Pictures Found!
+-else
+%div#event_list
+	%br{:style => "clear:both"}
+	-@marked.each do |picture|
+		%div#each
+			%div#picture_cover.thumbnail-wrapper
+				=link_to (image_tag picture.image_url(:picture_thumb).to_s), album_picture_path(picture.album, picture.id) 
+				%div#album_title.item-title-wrapper
+					%p.item-title
+						=picture.title	
+				%p.item-description{:style => "font-size:10px;margin-top:1px;"}
+					= truncate(picture.description, :length => 30, :omission =>"...")
+		%br{:style => "clear:both"}

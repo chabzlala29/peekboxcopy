@@ -1,0 +1,26 @@
+%h3
+	Leave a Reply
+=form_for :comment, :url => profile_video_comments_path(@video.id), :method => :post do |comment|
+	=comment.text_area :text
+	%br
+	=submit_tag "comment", :id => "submit"
+%h3
+	Comments
+
+	-@video.comments.each do |comment|
+		%div
+			-unless comment.user.profilepic == nil
+				%div#video-comment
+					%div#video-comment-pic
+						=link_to (image_tag comment.user.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(comment.user.username)
+					%div#video-comment-body
+						%p
+							%span#bold
+								=link_to comment.user.username, other_user_path(comment.user.username)
+							says:
+						%p.time-ago
+							=distance_of_time_in_words_to_now(comment.created_at)
+						%br
+						%p
+							=comment.body
+					%br{:style => "clear:both"}

@@ -1,0 +1,29 @@
+%div#page-info
+	%span#title
+		Inbox
+	%span#desc
+		Viewing Inbox Messages
+%br{:style=>"clear:both"}
+%h3
+=paginate @messages
+%div#wall
+	%div.post
+		-@messages.each do |message|
+			%div
+				-unless message.user.profilepic == nil
+					%div#wall-post
+						-if message.user.profilepic?
+							%div#wall-poster-pic
+								=link_to (image_tag message.user.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(message.user.username)
+						%div#wall-post-body
+							%p
+								%span#bold
+									=link_to message.user.username, other_user_path(message.user.username)
+							%p.time-ago
+								=distance_of_time_in_words_to_now(message.created_at)
+							%br
+							%p
+								=message.message
+						%br{:style => "clear:both"}
+		=link_to "Reply", compose_profile_messages_path
+=paginate @messages

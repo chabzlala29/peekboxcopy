@@ -1,0 +1,25 @@
+%div#page-info
+	%span#title
+		Image Box
+	%span#desc
+		Viewing Users Gallery
+%br{:style => "clear:both;"}
+-if @albums.empty?
+	%p
+		No Albums Found!
+-else
+	%div#albums
+		-@albums.each do |album|
+			%div#album-each
+				%div#album_cover.thumbnail-wrapper
+					=link_to (image_tag album.image_url(:album_thumb).to_s), album_pictures_path(album) 
+					%div#album_title.item-title-wrapper
+						%p.item-title
+							=album.title	
+- unless @ad == nil
+	%div.ads{:style => "float:right;"}
+		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
+%br{:style => "clear:both;"}
+%div
+	=paginate @albums
+%br{:style => "clear:both;"}

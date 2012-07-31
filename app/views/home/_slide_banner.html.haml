@@ -1,0 +1,7 @@
+%div{:style => "width:700px;margin:0px auto;float:left"}
+	%div.slider-wrapper.theme-default
+		%div.ribbon
+		%div#slider.nivoSlider
+			-@banners.each do |banner|
+				= image_tag banner.image_url(:slide)
+		%div#htmlcaption.nivo-html-caption
