@@ -1,4 +1,6 @@
 class Profile::MessagesController < Profile::ProfileController
+
+
   def inbox
 		@messages = current_user.received_messages
   end
@@ -10,30 +12,12 @@ class Profile::MessagesController < Profile::ProfileController
   end
 
   def send_message
-		@message = Message.new
-		@message.message = params[:message][:message]
-		@friend = User.find(params[:message][:friend_id])
-		@message.friend = @friend
-		@message.message_type = "sent"
-		@message.user = current_user
-
-		@message2 = Message.new
-		@message2.message = params[:message][:message]
-		@friend2 = User.find(params[:message][:friend_id])
-		@message2.friend = current_user
-		@message2.message_type = "inbox"
-		@message2.user = @friend2
-
-		if @message2.save!
-			if @message.save!
-				redirect_to sent_profile_messages_path, :notice => "Message Sent!"
-			else
-				redirect_to compose_profile_messages_path, :alert => "Error Sending Message!"
-			end
-		else
-			redirect_to compose_profile_messages_path, :alert => "Error Sending Message!"
-		end
-
+    begin
+      current_user.messages.create!(params[:message])
+      redirect_to sent_profile_messages_path, :notice => "Message Sent!"
+    rescue ActiveRecord::RecordInvalid => e
+      redirect_to compose_profile_messages_path, :alert => e.message
+    end
   end
 
   def sent
