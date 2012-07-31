@@ -18,18 +18,6 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-#gem 'ruby-debug19', :require => 'ruby-debug'
-
 gem 'fog'
 gem 'therubyracer', :platform => :ruby 
 gem 'execjs'
@@ -52,11 +40,9 @@ group :development do
   gem 'heroku-rails'
 end
 
-
 group :test, :development do 
   gem 'rspec-rails', '2.8'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'guard-rspec'
 end
-

@@ -123,7 +123,6 @@ Peekbox::Application.routes.draw do
 	post "contact" => "static#contact"
 
   root :to => 'home#index'
-
   match ":username" => "information#show", :as => "other_user"
   match ":username/friends" => "information#friends", :as => "other_user_friends"
 

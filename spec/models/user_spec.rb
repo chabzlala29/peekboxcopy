@@ -8,7 +8,6 @@ describe User do
     @userfriends1 = User.find_by_id(@user.friendships[0].friend_id)
     @userfriends2 = User.find_by_id(@user.friendships[1].friend_id)
     @userfriends3 = User.find_by_id(@user.friendships[2].friend_id)
-    
   end
 
 	describe "validation" do
@@ -18,7 +17,7 @@ describe User do
       }.to raise_error
     end
 
-   it "should validate unique username" do
+    it "should validate unique username" do
       expect{
         User.create!(:email => "user@user.com" , :username => @user.username, :password => "password")
       }.to raise_error
@@ -51,19 +50,17 @@ describe User do
   end
   
   describe "#friends_with?" do
-	it "should be friends with" do
-	  result = @user.friends_with?(@user,@user5)
-		
-	  result.should == true
-	end
+	  it "should be friends with" do
+	    result = @user.friends_with?(@user,@user5)
+	    result.should == true
+	  end
   end
   
   describe "#remove_friend" do
     it "should delete a friend" do
       result = @user.remove_friend(@user,@user5)
-		
       result.should == false
 		
-	end
+	  end
   end
 end
