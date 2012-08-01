@@ -8,7 +8,7 @@
 =paginate @messages
 %div#wall
   %div.post
-    -@messages.each do |message|
+    -@messages.collect(&:messages).each do |message|
       %div
         -unless message.user.profilepic == nil
           %div#wall-post

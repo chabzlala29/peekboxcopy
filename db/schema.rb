@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801025850) do
+ActiveRecord::Schema.define(:version => 20120801033105) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -169,6 +169,16 @@ ActiveRecord::Schema.define(:version => 20120801025850) do
   end
 
   add_index "thumbnails", ["video_id"], :name => "index_thumbnails_on_video_id"
+
+  create_table "user_messages", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "message_id"
+    t.string   "type"
+    t.string   "status"
+    t.string   "label"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

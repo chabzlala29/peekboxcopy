@@ -4,4 +4,13 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :message
   has_attached_file :attachment
+
+  after_create :create_user_message
+
+  private
+
+  def create_user_message
+    UserMessage.create!(:user_id => user.id,   :message_id => self.id, :type => "sender")
+    UserMessage.create!(:user_id => friend.id, :message_id => self.id, :type => "recipient")
+  end
 end
