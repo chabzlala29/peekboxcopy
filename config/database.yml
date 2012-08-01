@@ -8,10 +8,9 @@ development:
   database: peekbox_development
   host: localhost
   username: postgres
-  password: 123456
+  password: root
   pool: 5
   timeout: 5000
-  port: 5433
 
 
 # Warning: The database defined as "test" will be erased and
@@ -22,10 +21,9 @@ test:
   database: peekbox_test
   host: localhost
   username: postgres
-  password: 123456
+  password: root
   pool: 5
   timeout: 5000
-  port: 5433
 
 production:
   adapter: postgresql
