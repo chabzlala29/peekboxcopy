@@ -5,6 +5,7 @@ module Factory
     user3 = User.create!(:email => "test3@test.com", :username => "user3", :password => "password")
     user4 = User.create!(:email => "test4@test.com", :username => "user4", :password => "password")
     user5 = User.create!(:email => "test5@test.com", :username => "user5", :password => "password")
+    no_friends = User.create!(:email => "nofriends@test.com", :username => "nofriends", :password => "password")
 
     user1.add_friend(user2)
     user1.add_friend(user3)

@@ -1,9 +1,6 @@
 class Profile::MessagesController < Profile::ProfileController
-
-
   def inbox
 		@messages = current_user.received_messages.page(params[:page]).per(20)
-
   end
 
   def show
@@ -27,6 +24,7 @@ class Profile::MessagesController < Profile::ProfileController
 
   def compose
 		@friends = current_user.friends
+    redirect_to profile_path, :alert => "You currently have no friends. Please add some friends to use this feature." if @friends.empty?
   end
 
 end
