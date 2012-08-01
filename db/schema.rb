@@ -172,6 +172,71 @@ ActiveRecord::Schema.define(:version => 20120801033105) do
 
   create_table "user_messages", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "message_id"
+    t.string   "type"
+    t.string   "status"
+    t.string   "label"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password"
+    t.text     "location"
+    t.string   "occupation"
+    t.string   "website"
+    t.boolean  "admin",                                 :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email",                                 :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                         :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "username"
+    t.string   "sex"
+    t.string   "profilepic"
+    t.string   "shoutout"
+    t.boolean  "banned",                                :default => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "video_ads", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "media"
+    t.string   "zencoder_output_id"
+    t.string   "thumbnail"
+    t.boolean  "processed",          :default => false
+  end
+
+  create_table "video_bookmarks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "video_bookmarks", ["user_id"], :name => "index_video_bookmarks_on_user_id"
+  add_index "video_bookmarks", ["video_id"], :name => "index_video_bookmarks_on_video_id"
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
     t.integer  "category_id"
     t.string   "media"
     t.string   "zencoder_output_id"

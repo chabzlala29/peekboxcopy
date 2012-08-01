@@ -20,9 +20,9 @@ class User < ActiveRecord::Base
 
 	has_many :wall_post
 
-  has_many :messages, :order => "created_at DESC", :dependent => :destroy #SENT!!
-  has_many :sent_messages,     :class_name => "UserMessage", :order => "created_at DESC", :dependent => :destroy, :finder_sql => "where type='sender'"
-  has_many :received_messages, :class_name => "UserMessage", :order => "created_at DESC", :finder_sql => "where type='recipient'"
+    has_many :messages, :order => "created_at DESC", :dependent => :destroy #SENT!!
+    has_many :sent_messages,     :class_name => "UserMessage", :order => "created_at DESC", :dependent => :destroy, :finder_sql => "where type='sender'"
+    has_many :received_messages, :class_name => "UserMessage", :order => "created_at DESC", :finder_sql => "where type='recipient'"
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
 
