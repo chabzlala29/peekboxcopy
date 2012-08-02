@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :crop_x, :crop_y, :crop_w, :crop_h
 	attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
-
+	
 	scope :is_admin, where(:admin => true)
 	scope :not_admin, where(:admin => false)
 	scope :ban_list, where(:banned => true)
@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
 	has_many :wall_post
 
     has_many :messages, :order => "created_at DESC", :dependent => :destroy #SENT!!
-    has_many :sent_messages,     :class_name => "UserMessage", :order => "created_at DESC", :dependent => :destroy, :finder_sql => "where type='sender'"
-    has_many :received_messages, :class_name => "UserMessage", :order => "created_at DESC", :finder_sql => "where type='recipient'"
+    has_many :sent_messages, :class_name => "UserMessage", :order => "created_at DESC", :dependent => :destroy, :finder_sql => "where type_message='sender'"
+    has_many :received_messages, :class_name => "UserMessage", :order => "created_at DESC", :finder_sql => "where type_message='recipient'"
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy
 
