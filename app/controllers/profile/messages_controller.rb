@@ -11,7 +11,7 @@ class Profile::MessagesController < Profile::ProfileController
 
   def send_message
     begin
-      current_user.messages.create!(params[:message])
+      current_user.messages.create!(params[:message]) #TODO: convert friend_ids to recipients
       redirect_to sent_profile_messages_path, :notice => "Message Sent!"
     rescue ActiveRecord::RecordInvalid => e
       redirect_to compose_profile_messages_path, :alert => e.message

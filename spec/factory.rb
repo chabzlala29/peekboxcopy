@@ -12,9 +12,9 @@ module Factory
     user1.add_friend(user4)
     user1.add_friend(user5)
 
-    user1.messages.create!(:friend => user2, :message => "sent 1 week ago", :created_at => 1.week.ago)
-    user1.messages.create!(:friend => user2, :message => "sent 3 days ago", :created_at => 3.days.ago)
-    user1.messages.create!(:friend => user2, :message => "sent yesterday", :created_at => 1.day.ago)
+    user1.messages.create!(:message => "sent 1 week ago", :created_at => 1.week.ago, :recipients => [user2])
+    user1.messages.create!(:message => "sent 3 days ago", :created_at => 3.days.ago, :recipients => [user2])
+    user1.messages.create!(:message => "sent yesterday", :created_at => 1.day.ago, :recipients => [user2,user3])
   end
 
   def self.teardown

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801033105) do
+ActiveRecord::Schema.define(:version => 20120803032826) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20120801033105) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.boolean  "draft",                   :default => false
   end
 
   add_index "messages", ["friend_id"], :name => "index_messages_on_friend_id"

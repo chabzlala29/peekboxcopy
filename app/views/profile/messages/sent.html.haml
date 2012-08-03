@@ -10,22 +10,24 @@
   %div.post
     -@messages.collect(&:message).each do |message|
       %div
-        -unless message.friend.profilepic == nil
-          %div#wall-post
-            -if message.friend.profilepic?
-              %div#wall-poster-pic
-                =link_to (image_tag message.friend.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(message.friend.username)
-            %div#wall-post-body
-              %p
-                %span#bold
-                  =link_to message.friend.username, other_user_path(message.friend.username)
-              %p.time-ago
-                =distance_of_time_in_words_to_now(message.created_at)
-              %br
-              %p
-                =message.message
-              %br
-              = link_to "Attachment", message.attachment.url, :target => "_blank" if message.attachment.present?
-            %br{:style => "clear:both"}
+        - message.recipient_users.each do |recipient|
+          -unless recipient.profilepic == nil
+            %div#wall-post
+              -if recipient.profilepic?
+                %div#wall-poster-pic
+                  =link_to (image_tag recipient.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(recipient.username)
+            %p
+              %span#bold
+                =link_to recipient.username, other_user_path(recipient.username)
+
+        %div#wall-post-body
+          %p.time-ago
+            =distance_of_time_in_words_to_now(message.created_at)
+          %br
+          %p
+            =message.message
+          %br
+          = link_to "Attachment", message.attachment.url, :target => "_blank" if message.attachment.present?
+        %br{:style => "clear:both"}
 
 =paginate @messages
