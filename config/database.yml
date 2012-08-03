@@ -9,6 +9,7 @@ development:
   host: localhost
   username: postgres
   password: root
+  port: 5433
   pool: 5
   timeout: 5000
 
@@ -22,6 +23,7 @@ test:
   host: localhost
   username: postgres
   password: root
+  port: 5433
   pool: 5
   timeout: 5000
 
