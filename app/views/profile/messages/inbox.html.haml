@@ -17,6 +17,8 @@
             -if message.user.profilepic?
               %div#wall-poster-pic
                 =link_to (image_tag message.user.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(message.user.username)
+            - else
+              = link_to (image_tag "no-profile-pic.jpg", :style => "float:left;height:50px;width:76px;"), other_user_path(message.user.username)
             %div#wall-post-body
               %p
                 %span#bold
