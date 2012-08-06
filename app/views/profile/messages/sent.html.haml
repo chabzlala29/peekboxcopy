@@ -8,18 +8,17 @@
 =paginate @messages
 %div#wall
   %div.post
-    -@messages.collect(&:message).each do |message|
+    -@messages.each do |user_message|
+      - message = user_message.message
       %div
-        - message.recipient_users.each do |recipient|
-          -unless recipient.profilepic == nil
-            %div#wall-post
-              -if recipient.profilepic?
-                %div#wall-poster-pic
-                  =link_to (image_tag recipient.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(recipient.username)
-            %p
-              %span#bold
-                =link_to recipient.username, other_user_path(recipient.username)
-
+        %div#wall-post
+          - message.recipient_users.each do |recipient|
+            -if recipient.profilepic?
+              %div#wall-poster-pic
+                =link_to (image_tag recipient.profilepic_url(:profile_pic) ,:style => "width:50px;height:76px"), other_user_path(recipient.username)
+            %span#bold
+              =link_to recipient.username, other_user_path(recipient.username)
+          = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
         %div#wall-post-body
           %p.time-ago
             =distance_of_time_in_words_to_now(message.created_at)
@@ -28,6 +27,10 @@
             =message.message
           %br
           = link_to "Attachment", message.attachment.url, :target => "_blank" if message.attachment.present?
+
+
         %br{:style => "clear:both"}
+
+
 
 =paginate @messages

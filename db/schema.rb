@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803032826) do
+ActiveRecord::Schema.define(:version => 20120806020728) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -175,11 +175,13 @@ ActiveRecord::Schema.define(:version => 20120803032826) do
     t.integer  "user_id"
     t.integer  "message_id"
     t.string   "type_message"
-    t.string   "status"
+    t.string   "status",       :default => "unread"
     t.string   "label"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "user_messages", ["user_id", "status"], :name => "user_id_status_idx"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

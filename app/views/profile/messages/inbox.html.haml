@@ -8,7 +8,9 @@
 =paginate @messages
 %div#wall
   %div.post
-    -@messages.collect(&:message).each do |message|
+    -@messages.each do |user_message|
+      = select_tag :label, UserMessage::LABELS.values
+      - message = user_message.message
       %div
         -unless message.user.profilepic == nil
           %div#wall-post
@@ -19,6 +21,7 @@
               %p
                 %span#bold
                   =link_to message.user.username, other_user_path(message.user.username)
+              = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
               %p.time-ago
                 =distance_of_time_in_words_to_now(message.created_at)
               %br
