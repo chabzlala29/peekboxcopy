@@ -36,6 +36,7 @@ gem 'kaminari'
 gem 'rails_autolink'
 gem 'flash_cookie_session'
 gem 'pivotal_git_scripts'
+gem 'activerecord-mysql2-adapter'
 
 group :development do
   gem 'heroku-rails'

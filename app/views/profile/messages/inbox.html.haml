@@ -8,8 +8,13 @@
 =paginate @messages
 %div#wall
   %div.post
+
+
     -@messages.each do |user_message|
-      = select_tag :label, UserMessage::LABELS.values
+      = form_for :message, :url => move_to_label_profile_messages_path(user_message) do |message|
+        = select_tag :label, options_for_select(UserMessage::LABELS.values)
+        = submit_tag "Move to Label", :confirm => "Are you sure?"
+     
       - message = user_message.message
       %div
         -unless message.user.profilepic == nil

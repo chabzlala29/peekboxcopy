@@ -91,6 +91,7 @@ Peekbox::Application.routes.draw do
 				post "send_message"
 				get "sent"
 				get "compose"
+				post "move_to_label", :path => 'move_to_label/:id'
 			end
 		end
 		resources :events

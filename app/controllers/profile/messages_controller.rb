@@ -14,6 +14,12 @@ class Profile::MessagesController < Profile::ProfileController
     redirect_to request.referer, :notice => "Yay! Success!"
   end
 
+  def move_to_label
+    user_message = UserMessage.find(params[:id])
+    user_message.update_attributes(:label => params[:label])
+    redirect_to request.referer, :notice => "Successfully Updated!"
+  end
+
   def send_message
     begin
       form_params = params[:message]
