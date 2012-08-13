@@ -146,8 +146,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
-    pg (0.13.2)
-    pg (0.13.2-x86-mingw32)
     pivotal_git_scripts (1.1.4)
     polyglot (0.3.3)
     rack (1.3.6)
@@ -220,8 +218,6 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.6)
-    sqlite3 (1.3.6-x86-mingw32)
     subexec (0.2.1)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
@@ -264,8 +260,8 @@ DEPENDENCIES
   json
   kaminari
   mini_magick
+  mysql2
   paperclip
-  pg
   pivotal_git_scripts
   rails (= 3.1.3)
   rails_autolink
@@ -273,7 +269,6 @@ DEPENDENCIES
   rspec-rails (= 2.8)
   ruby_parser
   sass-rails (~> 3.1.5)
-  sqlite3
   therubyracer
   uglifier (>= 1.0.3)
   zencoder
