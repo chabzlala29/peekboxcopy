@@ -15,7 +15,7 @@ end
 gem 'jquery-rails'
 
 gem 'fog'
-gem 'therubyracer', :platform => :ruby 
+gem 'therubyracer', :platform => :ruby
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
@@ -31,7 +31,6 @@ gem 'kaminari'
 gem 'rails_autolink'
 gem 'flash_cookie_session'
 gem 'pivotal_git_scripts'
-gem 'activerecord-mysql2-adapter'
 
 group :development do
   gem 'heroku-rails'
