@@ -34,6 +34,8 @@ gem 'pivotal_git_scripts'
 
 group :development do
   gem 'heroku-rails'
+  gem 'taps', :require => false
+  gem 'sqlite3'
 end
 
 group :test, :development do 

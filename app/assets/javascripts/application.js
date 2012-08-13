@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
 
 //= require profile/zjcrop/jquery.Jcrop.js
 //= require profile/zjcrop/jquery.Jcrop.min.js
