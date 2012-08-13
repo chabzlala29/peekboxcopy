@@ -46,7 +46,7 @@ module Peekbox
     config.assets.version = '1.0'
 
 		#if deploy on heroku
-		config.assets.initialize_on_precompile = false
+		#config.assets.initialize_on_precompile = false
 
 		config.action_mailer.default_url_options = {:host => "112.205.211.255", :port => "3000"}
   end
