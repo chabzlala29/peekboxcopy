@@ -20,10 +20,6 @@ class UserMessage < ActiveRecord::Base
   end
 
   def destroy
-    message_ids = params[:user_message_ids].collect {|id| id.to_i} if params[:user_message_ids]
-
-    message_ids.each do |id|
-      self.update_attribute(:status, 'deleted')
-    end
+    self.update_attribute(:status, 'deleted')
   end
 end
