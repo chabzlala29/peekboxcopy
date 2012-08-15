@@ -1,4 +1,5 @@
 class Profile::MessagesController < Profile::ProfileController
+  autocomplete :user, :username
   before_filter :load_user_message, :only => :destroy
 
   def inbox

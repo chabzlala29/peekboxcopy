@@ -92,6 +92,7 @@ Peekbox::Application.routes.draw do
 				get "sent"
 				get "compose"
 				post "move_to_label", :path => 'move_to_label/:id'
+        get "autocomplete_user_username"
 			end
 		end
 		resources :events

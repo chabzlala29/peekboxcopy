@@ -13,6 +13,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rails3-jquery-autocomplete'
 
 gem 'fog'
 gem 'therubyracer', :platform => :ruby

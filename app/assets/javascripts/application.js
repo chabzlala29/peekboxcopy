@@ -6,13 +6,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require autocomplete-rails
 //= require_tree .
+
 
 //= require profile/zjcrop/jquery.Jcrop.js
 //= require profile/zjcrop/jquery.Jcrop.min.js
 //= require profile/zjcrop/jquery.color.js
 
-//= require jquery_ui/jquery-ui-1.8.18.custom.min.js
 //= require jquery_ui/jquery-ui-timepicker-addon.js
 
 //= require nivo_slider/jquery.nivo.slider.js
