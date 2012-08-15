@@ -44,8 +44,14 @@ module Peekbox
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.generators do |g|
+      g.template_engine :haml
 
-		#if deploy on heroku
+      # you can also specify a different test framework or ORM here
+      # g.test_framework  :rspec
+      # g.orm             :mongoid
+    end
+    #if deploy on heroku
 		#config.assets.initialize_on_precompile = false
 
 		config.action_mailer.default_url_options = {:host => "112.205.211.255", :port => "3000"}

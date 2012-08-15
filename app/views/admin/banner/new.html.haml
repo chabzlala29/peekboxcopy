@@ -1,6 +1,8 @@
 =form_for @banner,:url => admin_banner_index_path, :html => {:multipart => true} do |banner|
-	%label{:for => "image"} Banner Image:
-	%br
-	= banner.file_field :image
-	%br
-	= submit_tag "Add Banner"
+  %label{:for => "image"} Banner Image:
+  %br
+  = banner.file_field :image
+  %br
+  = text_field_tag :page_url
+  %br
+  = submit_tag "Add Banner"
