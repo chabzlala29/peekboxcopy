@@ -8,13 +8,11 @@
 =paginate @messages
 %div#wall
   %div.post
-
-
     -@messages.each do |user_message|
       = form_for :message, :url => move_to_label_profile_messages_path(user_message) do |message|
         = select_tag :label, options_for_select(UserMessage::LABELS.values)
-        = submit_tag "Move to Label", :confirm => "Are you sure?"
-     
+        = submit_tag "Move to Label".html_safe, :confirm => "Are you sure?"
+
       - message = user_message.message
       %div
         -unless message.user.profilepic == nil
@@ -28,9 +26,7 @@
               %p
                 %span#bold
                   =link_to message.user.username, other_user_path(message.user.username)
-              = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
-              %p.time-ago
-                =distance_of_time_in_words_to_now(message.created_at)
+\
               %br
               %p
 
@@ -38,4 +34,6 @@
               %br
               = link_to "Attachment", message.attachment.url if message.attachment.present?
             %br{:style => "clear:both"}
+
+            = link_to "<button>Bulk Delete</button>".html_safe, profile_message_path(user_message), :id => 'user_message_ids', :confirm => "Are you sure?", :method => :delete
 =paginate @messages

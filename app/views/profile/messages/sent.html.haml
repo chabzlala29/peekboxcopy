@@ -20,6 +20,8 @@
               = link_to (image_tag "no-profile-pic.jpg", :id => "defaultprofilepic"), other_user_path(recipient.username)
             %span#bold
               =link_to recipient.username, other_user_path(recipient.username)
+          %br
+          = check_box_tag 'user_message_ids[]', user_message.id, false, :multitple => true
           = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
         %div#wall-post-body
           %p.time-ago
@@ -32,7 +34,5 @@
 
 
         %br{:style => "clear:both"}
-
-
 
 =paginate @messages

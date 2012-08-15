@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(:version => 20120806020728) do
     t.integer  "user_id"
     t.integer  "message_id"
     t.string   "type_message"
-    t.string   "status"
+    t.string   "status",       :default => "unread"
     t.string   "label"
     t.datetime "created_at"
     t.datetime "updated_at"

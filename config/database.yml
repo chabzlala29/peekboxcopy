@@ -27,12 +27,3 @@ production:
   password: W3cand0th!s
   database: peekbox_production
 
-#production:
-#  adapter: postgresql
-#  encoding: unicode
-#  host: ec2-23-21-227-193.compute-1.amazonaws.com
-#  username: ubvhpmdmjo
-#  password: AMIbLIbOQflm6E5W1s9I
-#  database: ubvhpmdmjo
-#  pool: 5
-#  timeout: 5000
