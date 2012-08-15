@@ -9,7 +9,7 @@
 %div#wall
   %div.post
     -@messages.each do |user_message|
-      = form_for :message, :url => move_to_label_profile_messages_path(user_message) do |message|
+      -#= form_for :message, :url => move_to_label_profile_messages_path(user_message) do |message|
         = select_tag :label, options_for_select(UserMessage::LABELS.values)
         = submit_tag "Move to Label".html_safe, :confirm => "Are you sure?"
 
@@ -34,5 +34,5 @@
               = link_to "Attachment", message.attachment.url if message.attachment.present?
             %br{:style => "clear:both"}
 
-            = link_to "<button>Bulk Delete</button>".html_safe, profile_message_path(user_message), :id => 'user_message_ids', :confirm => "Are you sure?", :method => :delete
+            -#= link_to "<button>Bulk Delete</button>".html_safe, profile_message_path(user_message), :id => 'user_message_ids', :confirm => "Are you sure?", :method => :delete
 =paginate @messages
