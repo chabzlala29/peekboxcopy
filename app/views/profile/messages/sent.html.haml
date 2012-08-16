@@ -21,18 +21,18 @@
             %span#bold
               =link_to recipient.username, other_user_path(recipient.username)
           %br
-          = check_box_tag 'user_message_ids[]', user_message.id, false, :multitple => true
-          = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
-        %div#wall-post-body
-          %p.time-ago
-            =distance_of_time_in_words_to_now(message.created_at)
-          %br
-          %p
-            =message.message
-          %br
-          = link_to "Attachment", message.attachment.url, :target => "_blank" if message.attachment.present?
+          -#= check_box_tag 'user_message_ids[]', user_message.id, false, :multitple => true
+          -#= link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
+          %div#wall-post-body
+            %p.time-ago
+              =distance_of_time_in_words_to_now(message.created_at)
+            %br
+            %p
+              =message.message
+            %br
+            = link_to "Attachment", message.attachment.url, :target => "_blank" if message.attachment.present?
 
 
-        %br{:style => "clear:both"}
+          %br{:style => "clear:both"}
 
 =paginate @messages
