@@ -63,10 +63,9 @@ Peekbox::Application.configure do
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.default :charset => "utf-8"
 
-  unless Rails.env.production?
-    ENV['AWS_ACCESS_KEY_ID'] = 'AKIAJH5F3IJPRCG76MMQ'
-    ENV['AWS_SECRET_ACCESS_KEY'] = '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'
-  end
+   ENV['AWS_ACCESS_KEY_ID'] = 'AKIAJH5F3IJPRCG76MMQ'
+   ENV['AWS_SECRET_ACCESS_KEY'] = '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'
+
 
 
 	config.action_mailer.smtp_settings = {
