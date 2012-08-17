@@ -1,8 +1,9 @@
 class Profile::MessagesController < Profile::ProfileController
 
+  autocomplete :user, :username
+
   before_filter :load_user_message, :only => :destroy
 
-  autocomplete :user, :username
 
   def inbox
 		@messages = current_user.received_messages.page(params[:page]).per(20)
@@ -15,6 +16,19 @@ class Profile::MessagesController < Profile::ProfileController
     raise Exception if @user_message.user != current_user
     @user_message.destroy
     redirect_to request.referer, :notice => "Yay! Success!"
+  end
+
+  def delete_checked
+    #UserMessage.update_all(:status, 'deleted', :id => params[:user_message_ids])
+    #redirect_to compose_profile_messages_path, :alert => test
+    message_ids = params[:user_message_ids]
+    message_ids.each do |user_message|
+      message = UserMessage.find(user_message)
+      message.update_attribute(:status, 'deleted')
+    end
+
+    flash[:notice] = 'Successfully deleted!'
+    redirect_to request.referer
   end
 
   def move_to_label
@@ -44,5 +58,9 @@ class Profile::MessagesController < Profile::ProfileController
     redirect_to profile_path, :alert => "You currently have no friends. Please add some friends to use this feature." if @friends.empty?
   end
 
+  def get_autocomplete_items(parameters)
+    items = super(parameters)
+    items = items.where("users.id IN(?)", current_user.friends)
+  end
 
 end

@@ -101,7 +101,7 @@ class User < ActiveRecord::Base
 	def is_video_bookmarked(video) 
 		@bookmarked = VideoBookmark.where(:user_id => self.id, :video_id => video.id).first
 		@bookmarked.blank?
-	end
+  end
 
 	private
   def reprocess_profile

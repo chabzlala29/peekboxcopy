@@ -12,7 +12,7 @@ Peekbox::Application.configure do
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
@@ -64,13 +64,11 @@ Peekbox::Application.configure do
 	config.action_mailer.default :charset => "utf-8"
 
 	config.action_mailer.smtp_settings = {
-		:address => "smtp.gmail.com",
-		:port => 587,
+		:address => "localhost",
+		:port => 25,
 		:authentication => :plain,
-		:domain => ENV['GMAIL_SMTP_USER'],
-		:user_name => ENV['GMAIL_SMTP_USER'],
-		:password => ENV['GMAIL_SMTP_PASSWORD'],
+		:domain => "peekbox.tv",
 		:enable_starttls_auto => true
 	}
-	config.action_mailer.default_url_options = { :host => 'gentle-beach-4013.heroku.com' }
+	config.action_mailer.default_url_options = { :host => 'peekbox.tv' }
 end

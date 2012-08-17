@@ -18,6 +18,7 @@ class Message < ActiveRecord::Base
   end
 
   def add_recipient(recipient)
-    UserMessage.create!(:user_id => recipient, :message_id => self.id, :type_message => "recipient")
+    user_id = User.find_by_username(recipient).id
+    UserMessage.create!(:user_id => user_id, :message_id => self.id, :type_message => "recipient")
   end
 end

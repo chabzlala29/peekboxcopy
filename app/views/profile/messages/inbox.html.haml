@@ -7,34 +7,32 @@
 %h3
 =paginate @messages
 %div#wall
-  %div.post
-    -@messages.each do |user_message|
-      -#= form_for :message, :url => move_to_label_profile_messages_path(user_message) do |message|
-        = select_tag :label, options_for_select(UserMessage::LABELS.values)
-        = submit_tag "Move to Label".html_safe, :confirm => "Are you sure?"
-
-      - message = user_message.message
-      %div
-        -unless message.user.profilepic == nil
-          %div#wall-post
-            -if message.user.profilepic?
-              %div#wall-poster-pic
-                =link_to (image_tag message.user.profilepic_url(:profile_pic) ,:id => "inboxprofilepic"), other_user_path(message.user.username)
-            - else
-              = link_to (image_tag "no-profile-pic.jpg", :id => "defaultprofilepic"), other_user_path(message.user.username)
-            %div#wall-post-body
-
-              %p
-                %span#bold
-                  =link_to message.user.username, other_user_path(message.user.username)
-              %p.time-ago
-                =distance_of_time_in_words_to_now(message.created_at)
-              %p
-
-                =message.message
+  = form_tag delete_checked_profile_messages_path do
+    = submit_tag "Delete Checked", :confirm => "Are you sure to delete checked messages?"
+    %div.post
+      -@messages.each do |user_message|
+        - message = user_message.message
+        %div
+          -unless message.user.profilepic == nil
+            %div#wall-post
+              -if message.user.profilepic?
+                %div#wall-poster-pic
+                  =link_to (image_tag message.user.profilepic_url(:profile_pic) ,:id => "inboxprofilepic"), other_user_path(message.user.username)
+              - else
+                = link_to (image_tag "no-profile-pic.jpg", :id => "defaultprofilepic"), other_user_path(message.user.username)
+              %span#bold
+                =link_to message.user.username, other_user_path(message.user.username)
               %br
-              = link_to "Attachment", message.attachment.url if message.attachment.present?
-            %br{:style => "clear:both"}
+              = check_box_tag 'user_message_ids[]', user_message.id, false
 
-            -#= link_to "<button>Bulk Delete</button>".html_safe, profile_message_path(user_message), :id => 'user_message_ids', :confirm => "Are you sure?", :method => :delete
+              = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
+              %div#wall-post-body
+                %p.time-ago
+                  =distance_of_time_in_words_to_now(message.created_at)
+                %br
+                %p
+                  =message.message
+                %br
+                = link_to "Attachment", message.attachment.url if message.attachment.present?
+              %br{:style => "clear:both"}
 =paginate @messages
