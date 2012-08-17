@@ -1,5 +1,6 @@
 class Profile::MessagesController < Profile::ProfileController
   autocomplete :user, :username
+
   before_filter :load_user_message, :only => :destroy
 
   def inbox
@@ -53,6 +54,11 @@ class Profile::MessagesController < Profile::ProfileController
   def compose
 		@friends = current_user.friends
     redirect_to profile_path, :alert => "You currently have no friends. Please add some friends to use this feature." if @friends.empty?
+  end
+
+  def get_autocomplete_items(parameters)
+    items = super(parameters)
+    items = items.where("users.id IN(?)", current_user.friends)
   end
 
   private

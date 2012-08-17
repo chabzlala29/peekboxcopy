@@ -8,8 +8,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require autocomplete-rails
-//= require_tree .
-
 
 //= require profile/zjcrop/jquery.Jcrop.js
 //= require profile/zjcrop/jquery.Jcrop.min.js
@@ -21,3 +19,5 @@
 //= require nivo_slider/jquery.nivo.slider.pack.js
 
 //= require uploadify/jquery.uploadify.js
+
+//= require_tree .
