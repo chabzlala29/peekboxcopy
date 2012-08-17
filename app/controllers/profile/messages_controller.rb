@@ -15,12 +15,10 @@ class Profile::MessagesController < Profile::ProfileController
   def destroy
     raise Exception if @user_message.user != current_user
     @user_message.destroy
-    redirect_to request.referer, :notice => "Yay! Success!"
+    redirect_to request.referer, :notice => "Delete Success!"
   end
 
   def delete_checked
-    #UserMessage.update_all(:status, 'deleted', :id => params[:user_message_ids])
-    #redirect_to compose_profile_messages_path, :alert => test
     message_ids = params[:user_message_ids]
     message_ids.each do |user_message|
       message = UserMessage.find(user_message)
