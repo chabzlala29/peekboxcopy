@@ -1,6 +1,8 @@
 class Profile::MessagesController < Profile::ProfileController
-  autocomplete :user, :username
+
   before_filter :load_user_message, :only => :destroy
+
+  autocomplete :user, :username
 
   def inbox
 		@messages = current_user.received_messages.page(params[:page]).per(20)
@@ -42,9 +44,5 @@ class Profile::MessagesController < Profile::ProfileController
     redirect_to profile_path, :alert => "You currently have no friends. Please add some friends to use this feature." if @friends.empty?
   end
 
-  private
 
-  def load_user_message
-    @user_message = UserMessage.find(params[:id])
-  end
 end
