@@ -43,8 +43,12 @@ Peekbox::Application.configure do
   config.assets.compress = false
   config.assets.compile  = true
 
+
+
   # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.debug = false
+
+  config.serve_static_assets = false
 
 	# host for emailing using devise
 	config.action_mailer.default_url_options = { :host => ENV['URL'], :port => ENV['PORT'] }

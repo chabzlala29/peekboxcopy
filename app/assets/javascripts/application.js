@@ -15,9 +15,6 @@
 
 //= require jquery_ui/jquery-ui-timepicker-addon.js
 
-//= require nivo_slider/jquery.nivo.slider.js
-//= require nivo_slider/jquery.nivo.slider.pack.js
-
 //= require uploadify/jquery.uploadify.js
 
 //= require_tree .
