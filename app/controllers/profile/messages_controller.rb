@@ -63,4 +63,9 @@ class Profile::MessagesController < Profile::ProfileController
     items = items.where("users.id IN(?)", current_user.friends)
   end
 
+  private
+
+  def load_user_message
+    @user_message = UserMessage.find(params[:id])
+  end
 end
