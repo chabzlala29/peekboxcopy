@@ -15,6 +15,19 @@ class Profile::MessagesController < Profile::ProfileController
     redirect_to request.referer, :notice => "Yay! Success!"
   end
 
+  def delete_checked
+    #UserMessage.update_all(:status, 'deleted', :id => params[:user_message_ids])
+    #redirect_to compose_profile_messages_path, :alert => test
+    message_ids = params[:user_message_ids]
+    message_ids.each do |user_message|
+      message = UserMessage.find(user_message)
+      message.update_attribute(:status, 'deleted')
+    end
+
+    flash[:notice] = 'Successfully deleted!'
+    redirect_to request.referer
+  end
+
   def move_to_label
     user_message = UserMessage.find(params[:id])
     user_message.update_attributes(:label => params[:label])
