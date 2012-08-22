@@ -1,0 +1,73 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#event-thumbnail {
+	float:left;
+	input {
+		width:100%;
+	}
+}
+.event-title {
+	margin:0;
+	padding:0;
+	a {
+		color: #37B2D1;
+	}
+	font-size: 20px;
+	line-height: 1.4em;
+	font-family: verdana,'Ubuntu', arial, serif;
+	font-weight: lighter;
+}
+#event-content {
+	.title {
+		font-weight:bold;
+	}
+	float:left;
+	padding-left: 30px;
+	width: 500px;
+	
+}
+.nivoSlider {
+	height:331px;
+	width:635px;
+}
+
+#event-page-image {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#event_each {
+	#event-thumbnail {
+		input {
+			padding-top:0px;
+			height:18px;
+		}
+	}
+	#event-content {
+		p#location {
+			margin-top:8px;
+			margin-bottom:8px;
+		}
+		p#upload_date {
+			margin-bottom:8px;
+		}
+		p#description {
+			margin-top:8px;
+			margin-bottom:8px;
+			font-weight:lighter;
+			font-size:20px;
+		}
+	}
+
+}
+
+#event-page {
+	width: 700px;
+}
+div#events-pagination {
+	padding:10px;
+	margin:10px;
+}
