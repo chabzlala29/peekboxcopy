@@ -9,4 +9,8 @@ class HomeController < ApplicationController
 		@ad ||= Ads.find_by_location("home")
   end
 
+  def test_slider
+
+  end
+
 end
