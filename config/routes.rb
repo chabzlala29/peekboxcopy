@@ -90,10 +90,12 @@ Peekbox::Application.routes.draw do
 				get "inbox"
 				post "send_message"
 				get "sent"
+        get "trash"
 				get "compose"
 				post "move_to_label", :path => 'move_to_label/:id'
         get "autocomplete_user_username"
         post "delete_checked", :put
+
 			end
 		end
 		resources :events

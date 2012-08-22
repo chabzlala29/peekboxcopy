@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   has_many :messages, :order => "created_at DESC", :dependent => :destroy #SENT!!
   has_many :sent_messages, :class_name => "UserMessage", :order => "created_at DESC", :dependent => :destroy, :conditions => ["type_message = ? and status != ?", 'sender', 'deleted']
   has_many :received_messages, :class_name => "UserMessage", :order => "created_at DESC", :conditions => ["type_message = ? and status != ?", 'recipient', 'deleted']
+  has_many :trash_messages, :class_name => "UserMessage", :order => "created_at DESC", :conditions => ["type_message = ? and status = ?", 'recipient', 'deleted']
 
 	has_many :peekme, :through => :bookmarks
 	has_many :bookmarks, :dependent => :destroy

@@ -18,6 +18,10 @@ class Profile::MessagesController < Profile::ProfileController
     redirect_to request.referer, :notice => "Delete Success!"
   end
 
+  def trash
+    @messages = current_user.trash_messages.page(params[:page]).per(20)
+  end
+
   def delete_checked
     message_ids = params[:user_message_ids]
     message_ids.each do |user_message|
@@ -66,4 +70,6 @@ class Profile::MessagesController < Profile::ProfileController
   def load_user_message
     @user_message = UserMessage.find(params[:id])
   end
+
+
 end

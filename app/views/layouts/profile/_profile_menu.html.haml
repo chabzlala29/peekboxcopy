@@ -1,64 +1,67 @@
 %div#dashboard
-	%div#avatar
-		-if current_user.profilepic == nil
-			%h3
-				Avatar Image:
-			%div
-				=image_tag current_user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
+    %div#avatar
+        -if current_user.profilepic == nil
+            %h3
+                Avatar Image:
+            %div
+                =image_tag current_user.profilepic_url(:profile_pic).to_s, :id => "onprofilePicture"
 
-	%div.link
-		Videos
-		%ul.link
-			%li.item
-				= link_to 'My peek' , profile_video_bookmark_index_path
-			%li.item
-				= link_to 'View Videos' , profile_videos_path
-			%li.item
-				= link_to 'Add Video' , new_profile_video_path
-	%div.link
-		Photos
-		%ul.link
-			%li.item
-				= link_to 'My peek' , profile_picture_bookmark_index_path
-			%li.item
-				= link_to 'View Albums' , profile_albums_path
-			%li.item
-				= link_to 'Add Album' , new_profile_album_path
-	%div.link
-		Events
-		%ul.link
-			%li.item
-				= link_to 'My peek' , profile_bookmark_index_path
-			%li.item
-				= link_to 'View Events' , profile_events_path
-			%li.item
-				= link_to 'Add Event' , new_profile_event_path
-	%div.link
-		Messages
-		%ul.link
-			-unless current_user.friends.count == 0
-				%li.item
-					= link_to 'Compose' ,compose_profile_messages_path
-			%li.item
-				= link_to 'Inbox', inbox_profile_messages_path 
-			%li.item
-				= link_to 'Sent', sent_profile_messages_path 
-	%div.link
-		Friends
-		%ul.link
-			%li.item
-				= link_to 'Friends', profile_friends_path
-			%li.item
-				= link_to 'Search Friend', all_profile_friends_path
-	%div.link
-		Profile
-		%ul.link
-			%li.item
-				= link_to 'Profile Page', other_user_path(current_user.username)
-			%li.item
-				= link_to 'Change Information', edit_profile_information_path(current_user)
-			%li.item
-				= link_to 'Crop Profile Picture', edit_profile_crop_path(current_user.id)
+    %div.link
+        Videos
+        %ul.link
+            %li.item
+                = link_to 'My peek' , profile_video_bookmark_index_path
+            %li.item
+                = link_to 'View Videos' , profile_videos_path
+            %li.item
+                = link_to 'Add Video' , new_profile_video_path
+    %div.link
+        Photos
+        %ul.link
+            %li.item
+                = link_to 'My peek' , profile_picture_bookmark_index_path
+            %li.item
+                = link_to 'View Albums' , profile_albums_path
+            %li.item
+                = link_to 'Add Album' , new_profile_album_path
+    %div.link
+        Events
+        %ul.link
+            %li.item
+                = link_to 'My peek' , profile_bookmark_index_path
+            %li.item
+                = link_to 'View Events' , profile_events_path
+            %li.item
+                = link_to 'Add Event' , new_profile_event_path
+    %div.link
+        Messages
+        %ul.link
+            -unless current_user.friends.count == 0
+                %li.item
+                    = link_to 'Compose' ,compose_profile_messages_path
+            %li.item
+                = link_to 'Inbox', inbox_profile_messages_path
+            %li.item
+                = link_to 'Sent', sent_profile_messages_path
+            %li.item
+                = link_to 'Trash', trash_profile_messages_path
 
-	%br{:style=>"clear:both"}
+    %div.link
+        Friends
+        %ul.link
+            %li.item
+                = link_to 'Friends', profile_friends_path
+            %li.item
+                = link_to 'Search Friend', all_profile_friends_path
+    %div.link
+        Profile
+        %ul.link
+            %li.item
+                = link_to 'Profile Page', other_user_path(current_user.username)
+            %li.item
+                = link_to 'Change Information', edit_profile_information_path(current_user)
+            %li.item
+                = link_to 'Crop Profile Picture', edit_profile_crop_path(current_user.id)
+
+    %br{:style=>"clear:both"}
 %br{:style=>"clear:both"}
