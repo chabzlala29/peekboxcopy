@@ -61,7 +61,7 @@ class MediaUploader < CarrierWave::Uploader::Base
 																							:outputs => [{:base_url => "s3://peekbox.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{@model.id}",
 																														 :filename => "video.mp4",
 																														 :label => "web",
-																														 :notifications => [zencoder_callback_url(:protocol => "http", :host => ENV['URL'], :port => ENV['PORT'])],
+																														 :notifications => [zencoder_callback_url(:protocol => "http", :host => 'peekbox.tv', :port => ENV['PORT'])],
 																														 :video_codec => "h264",
 																														 :audio_codec => "aac",
 																														 :quality => 3,
