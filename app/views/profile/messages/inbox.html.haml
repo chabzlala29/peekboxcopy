@@ -7,7 +7,7 @@
 %h3
 =paginate @messages
 %div#wall
-  = form_tag delete_checked_profile_messages_path do
+  = form_tag delete_checked_profile_messages_path, :id => "my_form" do
     = submit_tag "Delete Checked", :confirm => "Are you sure to delete checked messages?"
     %div.post
       -@messages.each do |user_message|
@@ -23,7 +23,7 @@
               %span#bold
                 =link_to message.user.username, other_user_path(message.user.username)
               %br
-              = check_box_tag 'user_message_ids[]', user_message.id, false
+              = check_box_tag 'user_message_ids[]', user_message.id, false, :class => "check"
 
               = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
               %div#wall-post-body
