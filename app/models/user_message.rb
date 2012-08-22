@@ -21,5 +21,6 @@ class UserMessage < ActiveRecord::Base
 
   def destroy
     self.update_attribute(:status, 'deleted')
+    self.update_attribute(:deleted_at, Time.now )
   end
 end
