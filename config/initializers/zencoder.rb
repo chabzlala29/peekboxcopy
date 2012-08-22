@@ -1,1 +1,1 @@
-Zencoder.api_key = ENV['ZENCODER_API_KEY]                    # required
+Zencoder.api_key = ENV['ZENCODER_API_KEY']                    # required
