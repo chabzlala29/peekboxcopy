@@ -1,7 +1,52 @@
-%div{:style => "width:700px;margin:0px auto;float:left"}
-	%div.slider-wrapper.theme-default
-		%div.ribbon
-		%div#slider.nivoSlider
-			-@banners.each do |banner|
-				= link_to image_tag(banner.image_url(:slide)), banner.page_url, :target => '_blank'
-		%div#htmlcaption.nivo-html-caption
+#mlb-wrapper
+  #details.base
+    #photo.base
+      %ul#photos
+        -@banners.each do |banner|
+          %li
+            = link_to image_tag(banner.image_url(:slide)), banner.page_url, :target => '_blank'
+    / photo ends
+    #hover-box
+      #thumbs.base
+        %ul
+          - count = 1
+          -@banners.each do |banner|
+            %li
+              %a.highlight{:href => "##{count}"}
+                = image_tag(banner.image_url(:slide))
+                %span
+              - count += 1
+
+        %p Roy Halladay struck out 11 Marlins batters and threw 115 pitches Saturday.
+      / thumbs
+      #navigation.base
+        %a#prev.prev-next{:href => "#"}
+          %span <<
+          prev
+        %a#play-pause.play.pause{:href => "#", :title => "Play or Pause the slider"} Play/Pause
+        %ul
+          %li
+            %a.highlight{:href => "#1"} Story 1
+          %li
+            %a{:href => "#2"} Story 2
+          %li
+            %a{:href => "#3"} Story 3
+          %li
+            %a{:href => "#4"} Story 4
+          %li
+            %a{:href => "#5"} Story 5
+          %li
+            %a{:href => "#6"} Story 6
+        %a#next.prev-next{:href => "#"}
+          next
+          %span >>
+      / navigation
+    / hover box
+    #description.base
+      %p#small-caption Roy Halladay struck out 11 Marlins batters and threw 115 pitches Saturday.
+      %h1#title
+        %a{:href => "#"} Perfect prescription: History for Doc in Miami
+      %p#long-desc Phillies ace Roy Halladay made history in Miami on Saturday, tossing the 20th perfect game in MLB history vs. the Marlins in a 1-0 win. It was the first no-hitter of Halladay's brilliant career.
+    / description
+  / base
+/ mlb wrapper

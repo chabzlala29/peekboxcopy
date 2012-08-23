@@ -48,6 +48,7 @@ h1.title {
 
 	#photo img {
 		display: block;
+        width:480px;
 
 	}
 
@@ -248,6 +249,7 @@ h1.title {
 		
 	#description {
 		padding: 1px 0 0 0;
+        display: none;
 	}
 
 		p#small-caption {
