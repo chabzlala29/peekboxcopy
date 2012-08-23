@@ -14,20 +14,20 @@ h1.title {
 }
 
 #mlb-wrapper {
-	width: 490px;
+	width: 450px;
 	padding: 20px 0 0 0;
     overflow: hidden;
 }
 
 	.base {
 		margin: 0 auto;
-		width: 480px;
+		width: 440px;
 		text-align: center;
 		position: relative;
 	}
 	
 	#photo {
-		width: 480px;
+		width: 440px;
 		height: 270px;
 		overflow: hidden;
         position:relative;
@@ -42,10 +42,13 @@ h1.title {
 		#photo ul li {
 			display: block;
 			float: left;
+            margin-left:-40px;
+
 		}
 
 	#photo img {
 		display: block;
+
 	}
 
 	#details {
@@ -77,6 +80,7 @@ h1.title {
 	#thumbs ul {
 		width: 480px;
 		margin: 0 auto;
+        margin-left:-40px;
 	}
 	
 	#thumbs ul li {
@@ -98,6 +102,7 @@ h1.title {
 		border: solid 1px #fff;
 		position: relative;
 		z-index: 1;
+        width: 67px;
 	}
 	
 	#thumbs a.highlight img {
@@ -114,7 +119,7 @@ h1.title {
 			display: block;
 			width: 64px;
 			height: 32px;
-			border: solid 5px #fff;
+			border: solid 2px #fff;
 			opacity: .68;
 			filter: alpha(opacity=68);
 			position: absolute;
@@ -131,7 +136,7 @@ h1.title {
 	#navigation {
 		background: rgba(0, 0, 0, .5);
 		height: 23px;
-		width: 480px;
+		width: 440px;
 		z-index: 1;
 		position: absolute;
 		bottom: 0;
@@ -143,9 +148,9 @@ h1.title {
 	}
 	
 	#navigation ul {
-		width: 120px;
+
 		float: left;
-		margin: 0 0 0 142px;
+		margin: 0 0 0 100px;
 		display: inline;
 	}
 	
