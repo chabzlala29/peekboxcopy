@@ -20,6 +20,7 @@ class Profile::MessagesController < Profile::ProfileController
 
   def trash
     @messages = current_user.trash_messages.page(params[:page]).per(20)
+    @messages2 = current_user.trash_messages2.page(params[:page]).per(20)
   end
 
   def delete_checked

@@ -20,6 +20,10 @@ images/ui-icons_ff7519_256x240.png: images/ui-icons_ff7519_256x240-186e07d04a429
 images/ui-icons_ffffff_256x240.png: images/ui-icons_ffffff_256x240-47c682725bc49963b14b9afc06a9d4be.png
 jcrop/Jcrop.gif: jcrop/Jcrop-1481dfc47dce516a8952a3e88911fcb0.gif
 logo.png: logo-8a8b43f445125ab590cf0b3f5cec847c.png
+mlb/mlb-info.jpg: mlb/mlb-info-8b7e3ef6d37f26edf21fde5f052cfb3a.jpg
+mlb/mlb-infoOLD.jpg: mlb/mlb-infoOLD-8eb995eee07f534a0b32999f1e795674.jpg
+mlb/mlb-switcher.jpg: mlb/mlb-switcher-dee4a7724751884b5cf44dbb0c01838f.jpg
+mlb/play-pause.gif: mlb/play-pause-83aca0b9be34966db0c1f853efdbee3a.gif
 myPeekButton.png: myPeekButton-6292acb123a611a89122fbb70e5c1815.png
 no-profile-pic.jpg: no-profile-pic-20dda5e96859bceb438123214381879d.jpg
 pb/bird.png: pb/bird-3366af624bf8cf9ebd815b889a95209b.png
@@ -39,6 +43,6 @@ pb/twitter_32.png: pb/twitter_32-20e5b5a3fe3347390385216a2051d4f3.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
 unPeekButton.png: unPeekButton-b17e12740bdea1ce4c5f271b3066ed01.png
 uploadify-cancel.png: uploadify-cancel-c54ffe2f8b6e7a006dd6c45c59a8e116.png
-application.js: application-642b64df48683c1a14a19233a2e261ad.js
-application.css: application-cbb87f7952ef0fa15138a6f9b6e9c3f1.css
+application.js: application-9502773c8847668929eb9b7cd0982014.js
+application.css: application-b776a6760ff065f5fdb3f728b9907e04.css
 uploadify.swf: uploadify-1dd6c9abf0d45aa721fb0292853e0422.swf

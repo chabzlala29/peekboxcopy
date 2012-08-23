@@ -36,3 +36,37 @@
                 = link_to "Attachment", message.attachment.url if message.attachment.present?
               %br{:style => "clear:both"}
 =paginate @messages
+
+
+
+=paginate @messages2
+%div#wall
+  = form_tag delete_checked_profile_messages_path, :id => 'message_body' do
+    = submit_tag "Delete Checked", :confirm => "Are you sure to delete checked messages?"
+    %div.post
+      -@messages2.each do |user_message|
+        - message = user_message.message
+        %div
+          %div#wall-post
+            - message.recipient_users.each do |recipient|
+              -if recipient.profilepic?
+                %div#wall-poster-pic
+                  =link_to (image_tag recipient.profilepic_url(:profile_pic) ,:id => "sentprofilepic"), other_user_path(recipient.username)
+              - else
+                = link_to (image_tag "no-profile-pic.jpg", :id => "defaultprofilepic"), other_user_path(recipient.username)
+              %span#bold
+                =link_to recipient.username, other_user_path(recipient.username)
+            %br
+            = check_box_tag 'user_message_ids[]', user_message.id, false
+
+            = link_to "<button>Delete</button>".html_safe, profile_message_path(user_message), :confirm => "Are you sure?", :method => :delete
+            %div#wall-post-body
+              %p.time-ago
+                =distance_of_time_in_words_to_now(message.created_at)
+              %br
+              %p
+                =message.message
+              %br
+              = link_to "Attachment", message.attachment.url, :target => "_blank" if message.attachment.present?
+            %br{:style => "clear:both"}
+=paginate @messages2
