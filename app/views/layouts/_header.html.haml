@@ -31,17 +31,26 @@
       = image_tag("logo.png")
     #nav
       %ul
-        %li
-          = link_to 'Home', root_path
-        %li
-          = link_to 'Video', videos_path
-        %li
-          = link_to 'Gallery', albums_path
-        %li
-          = link_to 'Events', events_path
-        %li#last
-          %a{:href => "http://pilipinasproductions.com", :target => "_blank"}
-            Company
+        = link_to root_path do
+          %li
+            %span
+              Home
+        = link_to videos_path do
+          %li
+            %span
+              Videos
+        = link_to albums_path do
+          %li
+            %span
+              Gallery
+        = link_to events_path do
+          %li
+            %span
+              Events
+        %a{:href => "http://pilipinasproductions.com", :target => "_blank"}
+          %li#last
+            %span
+              Company
 
     -if user_signed_in?
       #profile
