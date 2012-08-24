@@ -46,12 +46,13 @@
       #profile
         #profile_pic
           - if current_user.profilepic?
-            - id = current_user.id
-            = image_tag("https://peekbox.s3.amazonaws.com/uploads/user/profilepic/#{id}/profile_pic_Profile_Peek.png")
+
+            - profilepic = current_user.profilepic
+            = image_tag("#{profilepic}")
           - else
             = image_tag("no-profile-pic.jpg")
 
         = link_to other_user_path(current_user.username) do
           %span
             = current_user.username
-      %button.signup Log out
+      /%button.signup Log out
