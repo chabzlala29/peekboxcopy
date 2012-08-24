@@ -1,0 +1,57 @@
+#top_header
+  #wrapper
+    %span#promote New to Peekbox TV. The most Interactive thing happening on the Web!
+    %a{:href => "#"}
+      #tour
+        %span
+          %a
+            = link_to 'Take a tour', help_path
+    %div#sign_status
+      %center
+        %span
+          -if user_signed_in?
+
+            = link_to 'Dashboard' , profile_path
+            |
+            = link_to 'Sign out', destroy_user_session_path, :method => :delete
+          -else
+
+            = link_to 'Sign in', new_user_session_path
+            or
+            = link_to 'Register', new_user_registration_path
+    /
+      <div id="login">
+      <haml:loud> image_tag(&quot;layout/login.png&quot;) </haml:loud>
+      <a href="#">Log In</a>
+
+      </div>
+#header
+  #header_wrapper
+    #image
+      = image_tag("logo.png")
+    #nav
+      %ul
+        %li
+          = link_to 'Home', root_path
+        %li
+          = link_to 'Video', videos_path
+        %li
+          = link_to 'Gallery', albums_path
+        %li
+          = link_to 'Events', events_path
+        %li#last
+          = link_to 'Company', company_path
+
+    -if user_signed_in?
+      #profile
+        #profile_pic
+          - if current_user.profilepic?
+            - id = current_user.id
+            = image_tag("https://peekbox.s3.amazonaws.com/uploads/user/profilepic/#{id}/profile_pic_Profile_Peek.png")
+          - else
+            = image_tag("no-profile-pic.jpg")
+
+        = link_to other_user_path(current_user.username) do
+          %span
+            = current_user.username
+      %button.signup Log out

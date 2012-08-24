@@ -1,13 +1,13 @@
 !!! 5
 %head
-	%title 
+	%title
 		Peekbox
 	= stylesheet_link_tag "application"
 	= javascript_include_tag "application"
 	= javascript_include_tag "http://w.sharethis.com/button/buttons.js"
 	= javascript_include_tag "nivo_slider/jquery.nivo.slider.js", "nivo_slider/jquery.nivo.slider.pack.js"
 	%script
-		stLight.options({publisher: "72a43595-432b-46cd-8d15-3b49d08b3be2"}); 
+		stLight.options({publisher: "72a43595-432b-46cd-8d15-3b49d08b3be2"});
 	= csrf_meta_tags
 	= favicon_link_tag "/favicon.jpg"
 	-if :meta_tags?
@@ -28,24 +28,8 @@
 		})();
 %body
 	%div#wrapper
-		%div#header
-			%div#wrapper
-				%div#sign_status
-					-if user_signed_in?
-						%p
-							= link_to 'Dashboard' , profile_path
-							|	
-							= link_to 'Sign out', destroy_user_session_path, :method => :delete
-					-else
-						= link_to 'Sign in', new_user_session_path
-						or
-						= link_to 'Register', new_user_registration_path
-		%div#menu_wide
-			%div#menu
-				%div#logo{:style => "float:left"}
-					=link_to (image_tag "logo.png"), root_path
-				#links-container
-					= render :partial => "layouts/menu"
+
+		= render :partial => "layouts/header"
 		#container_wide
 			#container
 				%div#flash

@@ -8,24 +8,7 @@
 	= favicon_link_tag "pb/favicon.jpg"
 %body
 	%div#wrapper
-		%div#header
-			%div#wrapper
-				%div#sign_status
-					-if user_signed_in?
-						%p
-							= link_to 'Dashboard' , profile_path
-							|	
-							= link_to 'Sign out', destroy_user_session_path, :method => :delete
-					-else
-						= link_to 'Sign in', new_user_session_path
-						or
-						= link_to 'Register', new_user_registration_path
-		%div#menu_wide
-			%div#menu
-				%div#logo{:style => "float:left"}
-					=link_to (image_tag "logo.png"), root_path
-				#links-container
-					= render :partial => "layouts/menu"
+		= render :partial => "layouts/header"
 		#container_wide
 			#container
 				%br{:style => "clear:both"}
