@@ -17,5 +17,5 @@
 						Location:
 					=event.location
 				%p#description
-					= truncate(event.description, :length => 120, :omission => "...")
+					= simple_format(truncate(event.description, :length => 120, :omission => "..."))
 		%br{:style => "clear:both"}
