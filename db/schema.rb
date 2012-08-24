@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822074204) do
+ActiveRecord::Schema.define(:version => 20120823064852) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20120822074204) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "page_url"
+    t.text     "description"
   end
 
   add_index "banners", ["user_id"], :name => "index_banners_on_user_id"

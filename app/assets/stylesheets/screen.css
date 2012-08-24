@@ -14,52 +14,53 @@ h1.title {
 }
 
 #mlb-wrapper {
-	width: 450px;
-	padding: 20px 0 0 0;
-    overflow: hidden;
+	width: 700px;
+    margin-left:-30px;
+    float:left;
+
 }
 
 	.base {
 		margin: 0 auto;
-		width: 440px;
-		text-align: center;
+		width: 635px;
+
 		position: relative;
 	}
 	
 	#photo {
-		width: 440px;
-		height: 270px;
+		width: 635px;
+		height: 335px;
 		overflow: hidden;
         position:relative;
 
 	}
 
 		#photo ul {
-			margin-left: 0px;
-			width: 2880px;
+            position:relative;
+            left:-40px;
+			width: 3810px;
 		}
 		
 		#photo ul li {
 			display: block;
 			float: left;
-            margin-left:-40px;
+
 
 		}
 
 	#photo img {
 		display: block;
-        width:480px;
+        width:635px;
+        position:relative;
+        top:-12px;
 
 	}
 
 	#details {
-		border: solid 1px #ccc;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-		padding: 3px;
-	}
-	
+        -webkit-box-shadow:1px 5px 7px #666666;
+        -moz-box-shadow:1px 5px 7px #666666;
+    }
+
 	#hover-box {
 		height: 23px;
 		margin-top: -23px;
@@ -81,7 +82,7 @@ h1.title {
 	#thumbs ul {
 		width: 480px;
 		margin: 0 auto;
-        margin-left:-40px;
+
 	}
 	
 	#thumbs ul li {
@@ -92,7 +93,7 @@ h1.title {
 
 	#thumbs p {
 		color: #fff;
-		font-size: 9px;
+		font-size: 12px;
 		padding: 2px 5px 5px 5px;
 		letter-spacing: normal;
 		font-family: Arial, Helvetica, sans-serif;
@@ -137,7 +138,7 @@ h1.title {
 	#navigation {
 		background: rgba(0, 0, 0, .5);
 		height: 23px;
-		width: 440px;
+		width: 100%;
 		z-index: 1;
 		position: absolute;
 		bottom: 0;
@@ -151,7 +152,7 @@ h1.title {
 	#navigation ul {
 
 		float: left;
-		margin: 0 0 0 100px;
+		margin: 0 0 0 190px;
 		display: inline;
 	}
 	

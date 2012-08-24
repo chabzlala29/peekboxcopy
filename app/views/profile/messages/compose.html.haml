@@ -7,9 +7,7 @@
 = form_for :message, :url => send_message_profile_messages_path do |message|
   %label{:for => "friend"} To:
   %br
-    = message.autocomplete_field :friend_id, autocomplete_user_username_profile_messages_path
-
-  //= collection_select(:message, :friend_id, @friends, :id, :username)
+    = message.autocomplete_field :friend_id, autocomplete_user_username_profile_messages_path#, :"data-delimiter" => ','
   %br
   %label{:for => "message"} Body:
   %br
