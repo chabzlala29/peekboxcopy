@@ -40,7 +40,8 @@
         %li
           = link_to 'Events', events_path
         %li#last
-          = link_to 'Company', company_path
+          %a{:href => "http://pilipinasproductions.com", :target => "_blank"}
+            Company
 
     -if user_signed_in?
       #profile
