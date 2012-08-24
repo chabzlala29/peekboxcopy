@@ -46,7 +46,9 @@ body{
   background-color:#1c1c1f;
   background:-webkit-gradient(linear, left top, left bottom, from(#1c1c1f), to(#070708) );
   background:-moz-linear-gradient(-90deg, #1c1c1f, #070708);
-
+  position:fixed;
+  z-index:999999;
+  top:0px;
 
   #wrapper{
     width:966px;
@@ -134,7 +136,9 @@ body{
 #header{
   width:100%;
   height:78px;
-
+  top:40px;
+  position:fixed;
+  z-index:99999;
   background-color:#f7e231;
   background:-webkit-gradient(linear, left top, left bottom, from(#f7e231), to(#d5c11c) );
   background:-moz-linear-gradient(-90deg, #f7e231, #d5c11c);
@@ -351,6 +355,8 @@ div#each{
 }
 
 #wrapper {
+  margin-top:130px;
+
 	#container {
 		@include wrapper-container;
 		.ads {

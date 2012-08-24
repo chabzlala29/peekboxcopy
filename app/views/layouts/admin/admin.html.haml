@@ -7,8 +7,9 @@
 	= csrf_meta_tags
 	= favicon_link_tag "/favicon.jpg"
 %body
+	= render :partial => "layouts/header"
 	%div#wrapper
-		= render :partial => "layouts/header"
+
 		#container_wide
 			#container
 				%br{:style => "clear:both"}
