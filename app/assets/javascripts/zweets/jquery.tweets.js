@@ -5,8 +5,8 @@
 * 
 * MIT License, see LICENSE file
 */
-(function($) { 
-  
+(function($) {
+
 var PROP_NAME = 'tweets';
 
 function TweetsPlugin() {
@@ -22,7 +22,7 @@ function TweetsPlugin() {
 }
 
 $.extend(TweetsPlugin.prototype, {
-  
+
   markerClassName: 'hasTweetsPlugin',
   baseUrl: 'http://twitter.com',
   api_method: 'http://twitter.com/statuses/user_timeline/',
@@ -30,12 +30,12 @@ $.extend(TweetsPlugin.prototype, {
   usernameRegex: /(@)(\w+)/g,
   requestUrl: "",
   responseData: null,
-  
+
   setDefaults: function(settings) {
     $.extend(this._defaults, settings || {});
     return this;
   },
-  
+
   /* Attach the tweets plugin functionality to an element.
     @param  target    (element) the html element on the page
     @param  settings  (object) the custom options for this instance */
@@ -51,7 +51,7 @@ $.extend(TweetsPlugin.prototype, {
     $.data(target[0], PROP_NAME, instance);
     this._fetchTwitterData(target, settings);
   },
-  
+
   /* Pull JSON from the twitter API for a user
 	   @param  element    (element) the html element on the page
 	   @param  settings  (object) the custom options for this instance */
@@ -66,8 +66,8 @@ $.extend(TweetsPlugin.prototype, {
       }
     );
   },
-  
-  /* Convert JSON data returned from twitter API into markup to insert 
+
+  /* Convert JSON data returned from twitter API into markup to insert
      into page
 	   @param  element    (element) the html element on the page
 	   @param  settings  (object) the custom options for this instance */
@@ -89,7 +89,7 @@ $.extend(TweetsPlugin.prototype, {
     $('<ul/>').html( tweetsHTML ).appendTo( element );
     this._displayTweets(element);
   },
-  
+
   _buildTweetText: function(item) {
     var text = item.text;
     var self = this;
@@ -123,7 +123,7 @@ $.extend(TweetsPlugin.prototype, {
 	_parseDate: function(date_str) {
 		return Date.parse(date_str.replace(/^([a-z]{3})( [a-z]{3} \d\d?)(.*)( \d{4})$/i, '$1,$2$4$3'));
 	},
- 
+
   _buildTweetTimestamp: function(element, item) {
     var instance = $.data(element[0], PROP_NAME);
     var self = this;
@@ -133,7 +133,7 @@ $.extend(TweetsPlugin.prototype, {
     }
     return timestamp;
   },
-  
+
   /* Convert links to hyperlinked text
 	   @param  text  (string) original plain text */
   _autoLinkText: function(text) {
@@ -143,7 +143,7 @@ $.extend(TweetsPlugin.prototype, {
       return text;
     }
   },
-  
+
   /* Convert twitter usernames to hyperlinked usernames
 	   @param  text  (string) original plain text */
   _autoLinkUsernames: function(text) {
@@ -153,7 +153,7 @@ $.extend(TweetsPlugin.prototype, {
       return text;
     }
   },
-  
+
   /* Build link back to tweet permalink from parts
     @param  id_str       (string) twitter status ID string
     @param  date         (date) date when tweet was made
@@ -175,7 +175,7 @@ $.extend(TweetsPlugin.prototype, {
 
     return "<a href='" + timestampUrl + "'>" + date + "</a>";
   },
-  
+
   /* Decide to either cycle or display tweets markup
     @param  element  (element) element containing tweets */
   _displayTweets: function(element) {
@@ -189,7 +189,7 @@ $.extend(TweetsPlugin.prototype, {
       element.show();
     }
   },
-  
+
   /* Show one tweet for the animateDurection, then replace it with another
     @param  element  (element) element containing tweets */
   _cycleTweets: function(element) {
@@ -213,7 +213,7 @@ $.extend(TweetsPlugin.prototype, {
 
 // The list of commands that return values and don't permit chaining
 var getters = ['settings'];
-  
+
 $.fn.tweets = function(options) {
   var otherArgs = Array.prototype.slice.call(arguments, 1);
   if ($.inArray(options, getters) > -1) {

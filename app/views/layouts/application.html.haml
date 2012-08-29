@@ -10,6 +10,7 @@
 		stLight.options({publisher: "72a43595-432b-46cd-8d15-3b49d08b3be2"});
 	= csrf_meta_tags
 	= favicon_link_tag "/assets/favicon.jpg"
+
 	-if :meta_tags?
 		=yield :meta_tags if :meta_tags?
 	-else
@@ -27,6 +28,7 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 %body
+
 	= render :partial => "layouts/header"
 	%div#wrapper
 		#container_wide
@@ -46,3 +48,4 @@
 			$('#tweets').tweets({username:'peekbox', cycle:true});
 			});
 	= render :partial => "layouts/bottom"
+

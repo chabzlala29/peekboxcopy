@@ -4,10 +4,13 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require jquery-ui
 //= require autocomplete-rails
+
 
 //= require profile/zjcrop/jquery.Jcrop.js
 //= require profile/zjcrop/jquery.Jcrop.min.js

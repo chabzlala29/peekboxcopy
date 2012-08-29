@@ -1,0 +1,2 @@
+module Independent::IndependentHelper
+end

@@ -323,3 +323,16 @@ objMLB =
   extURL: ["#1", "#2", "#3", "#4", "#5", "#6"]
 # extURL
 # objMLB ends here
+
+
+
+
+#===================================================================================================
+jQuery(document).ready ($) ->
+  $("a.iframe").fancybox
+    width: "75%"
+    height: "75%"
+    autoScale: false
+    transitionIn: "none"
+    transitionOut: "none"
+    type: "iframe"

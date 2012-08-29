@@ -9,6 +9,7 @@ Peekbox::Application.routes.draw do
 
   get "home" => "home#test_slider"
 
+
 	namespace :admin do
 		resources :categories, :only => [:index, :new, :create, :edit, :update] 
 		resources :albums

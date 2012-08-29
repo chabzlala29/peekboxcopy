@@ -32,6 +32,7 @@ gem 'kaminari'
 gem 'rails_autolink'
 gem 'flash_cookie_session'
 gem 'pivotal_git_scripts'
+gem 'fancybox-rails'
 
 group :development do
   gem 'heroku-rails'
