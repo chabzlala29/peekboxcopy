@@ -2,7 +2,7 @@
   -@events.each do |event|
     - if event.image?
       %li
-        = link_to (image_tag event.image_url(:event_page)),  event_path(event), :title=>truncate(event.description, :length => 120, :omission => "..."),:alt=>"Click the thumbnail to see more"
+        = link_to (image_tag event.image_url(:event_page)),  event_path(event)#, :title=>truncate(event.description, :length => 120, :omission => "..."),:alt=>"Click the thumbnail to see more"
     - else
       %li
         = link_to (image_tag "no-profile-pic.jpg"), event_path(event)
