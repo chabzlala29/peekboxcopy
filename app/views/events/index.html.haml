@@ -1,17 +1,21 @@
-%div#page-info
-	%span#title
-		Event Box
-	%span#desc
-		Viewing Events
-=render "slideshow"
+=render "special_list"
 - unless @ad == nil
-	%div.ads{:style => "margin:40px 0 0 0;"}
+	%div#ads_event
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style => "clear:both"}
-=render "special_list"
 %div#events-pagination
 %h3
-	Recently Added Events
-=render "non_featured"
+	//Recently Added Events
 %div#events-pagination
 	=paginate @events
+
+
+
+
+
+
+
+
+
+
+
