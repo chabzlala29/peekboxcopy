@@ -66,6 +66,8 @@
 div#events-pagination {
 	padding:10px;
 	margin:10px;
+    float:left;
+    margin-top:70px;
 }
 
 div#ads_event{
@@ -80,7 +82,6 @@ div#ads_event{
   padding: 0 16px;
   height: 75px;
   position:relative;
-  top:100%;
   right:2%;
   width:80%;
 
@@ -98,10 +99,47 @@ div#ads_event{
     border: 10px solid #fff; cursor: pointer;
     background:#f6f6f6 ;
 
-    -moz-box-shadow:    4px 4px 5px 2px #000 ;
-    -webkit-box-shadow: 4px 4px 5px 2px #000;
-    box-shadow:         4px 4px 5px 2px #000;
 
+    .clip {position:relative;height:100%;text-align: center; vertical-align: center; overflow: hidden;}
+
+  }
+
+  li:last {
+    margin: 0;
+  }
+
+
+}
+
+.pika-thumbs2{
+  padding: 0 16px;
+  height: 75px;
+  position:relative;
+
+  right:2%;
+  width:80%;
+  float:left;
+
+
+
+  li{
+    width: 160px;
+    height:140px;
+    margin: 10px 0 0 17px;
+    padding: 0;
+    float:left;
+    overflow: hidden;
+    position:relative;
+    list-style-type: none;
+    padding: 2px 2px 2px; margin: 5px 5px;
+    border: 10px solid #f08080;
+    cursor: pointer;
+    background:#f6f6f6 ;
+
+    img{
+
+
+    }
     .clip {position:relative;height:100%;text-align: center; vertical-align: center; overflow: hidden;}
 
   }
@@ -121,8 +159,8 @@ div#ads_event{
   background: transparent;
   text-align:left;
   height:300px;
-  overflow:hidden;
-  margin:0;
+  margin-top:-35px;
+
 
 
   .pika-textnav {
@@ -135,6 +173,9 @@ div#ads_event{
     overflow-wrap: hidden;
     height:300px;
     width:966px;
+    border-bottom-left-radius: .6em;
+    border-bottom-right-radius: .6em;
+    box-shadow: 1px 2px 10px #666;
 
   }
   .caption {
@@ -167,15 +208,15 @@ div#ads_event{
   background: url(events/prev.png) no-repeat left 45%;
   height: 100%;
   width: 50px;
-  top: 10px; left:
-  10px;cursor:pointer;
+  top: -10px; left:
+  -10px;cursor:pointer;
 }
 .pika-imgnav a.next {
   background: url(events/next.png) no-repeat right 45%;
   height: 100%;
   width: 50px;
-  top: 10px;
-  right: 10px;
+  top: -10px;
+  right: -10px;
   cursor:pointer;
 }
 .pika-imgnav a.play {
@@ -213,12 +254,12 @@ div#ads_event{
 .pika-textnav a.previous {
   float: left;
   width: auto;
-  display: block;
+  display: none;
 }
 .pika-textnav a.next {
   float: right;
   width: auto;
-  display: block;
+  display: none;
 }
 
 /*for the tool tips*/
@@ -254,8 +295,21 @@ div#ads_event{
   right:15px; }
 
 p.desc{
-  color:#0000FF;
+  color:red;
+  font-size: 17px;
+  margin-left:20px;
+}
+ul#pikame{
 
+  li{
+    width:160px;
+
+  }
+
+  li.active{
+    width: 160px;
+
+  }
 }
 
 
