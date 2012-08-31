@@ -39,6 +39,11 @@ body{
 	margin:0px;
 	background:url("pb/noise.png");
 	font-family: verdana,'Ubuntu', arial, serif;
+
+    #fancybox-wrap{
+      z-index: 9999999;
+
+    }
 }
 
 #top_header{

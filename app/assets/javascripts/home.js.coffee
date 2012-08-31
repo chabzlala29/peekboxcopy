@@ -336,3 +336,5 @@ jQuery(document).ready ($) ->
     transitionIn: "none"
     transitionOut: "none"
     type: "iframe"
+    onclick: ->
+        jQuery("#fancybox-wrap, #fancybox-overlay").delay(3000).fadeOut()
