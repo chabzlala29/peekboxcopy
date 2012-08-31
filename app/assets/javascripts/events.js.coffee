@@ -20,20 +20,6 @@ $ ->
       queue: false
       duration: 200
 
-$ ->
-  $("#header_wrapper #nav a").hover (->
-    $("li div",this).stop().animate
-      opacity: 1.0
-    ,
-      queue: false
-      duration: 200
-
-  ), ->
-    $("li div", this).stop().animate
-      opacity: 0
-    ,
-      queue: false
-      duration: 200
 
 
 

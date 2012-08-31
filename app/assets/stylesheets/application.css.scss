@@ -199,20 +199,101 @@ body{
             top:25px;
             text-shadow:0px 1px 0px #fbf3b9;
           }
-          div{
+
+          div#sub_item {
             width:150px;
-            height:200px;
-            display: block;
-            background-color:black;
+            overflow:hidden;
+            display:none;
+            background-color:#3f3f6f;
             z-index:999999;
             float:left;
             position:absolute;
             margin-top:55px;
             margin-left:-21px;
-            border-bottom-left-radius: .5em;
-            border-bottom-right-radius: .5em;
-            opacity:0;
 
+
+            ul.sublist{
+
+
+              li.list_item{
+                border:none;
+                font-size:14px;
+                width:100%;
+                height:30px;
+                padding-top:5px;
+                color:#cec6ed;
+                font-weight:bold;
+              }
+
+              li.list_item:hover{
+                background-color:lightgray;
+                color:#3f3f6f;
+              }
+            }
+          }
+
+          div#sub_item2 {
+            width:150px;
+            overflow:hidden;
+            display:none;
+            background-color:#3f3f6f;
+            z-index:999999;
+            float:left;
+            position:absolute;
+            margin-top:55px;
+            margin-left:-21px;
+
+
+            ul.sublist2{
+
+
+              li.list_item2{
+                border:none;
+                font-size:14px;
+                width:100%;
+                height:30px;
+                padding-top:5px;
+                color:#cec6ed;
+                font-weight:bold;
+              }
+
+              li.list_item2:hover{
+                background-color:lightgray;
+                color:#3f3f6f;
+              }
+            }
+          }
+
+          div#sub_item3 {
+            width:150px;
+            overflow:hidden;
+            display:none;
+            background-color:#3f3f6f;
+            z-index:999999;
+            float:left;
+            position:absolute;
+            margin-top:55px;
+            margin-left:-21px;
+
+
+            ul.sublist3{
+
+
+              li.list_item3{
+                border:none;
+                font-size:14px;
+                width:100%;
+                height:30px;
+                padding-top:5px;
+                color:#cec6ed;
+                font-weight:bold;
+              }
+
+              li.list_item3:hover{
+                background-color:lightgray;
+                color:#3f3f6f;
+              }
+            }
           }
         }
 
