@@ -114,7 +114,11 @@ Peekbox::Application.routes.draw do
 	resources :videos, :only => [:show, :index]
 
 	# Events
-	resources :events, :only => [:show, :index]
+	resources :events, :only => [:show, :index] do
+    collection do
+      get "show_to", :path => 'show_to/:id'
+    end
+  end
 
 	#Albums
 	resources :albums, :only => [:show, :index] do

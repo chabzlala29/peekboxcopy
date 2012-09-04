@@ -1,0 +1,14 @@
+%div#page-info
+	%span#title
+		=@event.title
+	%span#desc
+%div#events-page
+	%br{:style => "clear:both"}
+	-if @event.image?
+		%div#event-page-image
+			= image_tag @event.image_url(:slide).to_s
+
+	%p
+		%p
+			Description:
+			=simple_format(auto_link(@event.description))

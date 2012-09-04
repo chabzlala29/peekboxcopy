@@ -1,14 +1,14 @@
-
-
+/Inject the special list part
 =render "special_list"
 
 - unless @ad == nil
 	%div#ads_event
+		/Ads at the right side
 		=link_to (image_tag @ad.banner_url(:banner_ad)), @ad.url
 %br{:style => "clear:both"}
 %div#events-pagination
 %h3
-	//Recently Added Events
+	/ Pagination
 %div#events-pagination
 	=paginate @events
 

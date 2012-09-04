@@ -1,14 +1,43 @@
+/Start pikachoose slider (Do not change the ul id name)
 %ul#pikame
+  %div#title-wrapper
+    %h1
+      /Static Page title
+      EVENTS GALLERY
 
-  -@featured_events.limit(6).each do |eventslide|
+  -@featured_events.limit(5).each do |eventslide| #change the limit no.
+    /If picture = true
     -if eventslide.image?
       %li
+        %div.title-strip
+          =eventslide.title
 
         = image_tag eventslide.image_url(:slide)
 
         %span
+          %h2.events_title
+            =eventslide.title
+
           %p.desc
-            This is a sample of description of text . . .
+            = truncate(eventslide.description, :length => 130, :omission => "...")
+            = link_to "Read more", show_to_events_path(eventslide), :id=>"read-more"
+  -@special_events.limit(1).limit(1).each do |event|
+    - if event.image?
+      %li
+        %div.title-strip
+          =event.title
+        = link_to (image_tag event.image_url(:thumb_event).to_s), event_path(event)
+
+
+        %span
+          %h2.events_title
+            =event.title
+
+          %p.desc
+
+            = truncate(event.description, :length => 130, :omission => "...")
+            = link_to "Read more", event_path(event), :id=>"read-more"
+
 =render "non_featured"
 
 

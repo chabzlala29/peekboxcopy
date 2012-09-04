@@ -1,52 +1,37 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree .
- *= require fancybox
- *= require jquery-ui-1.8.18.custom.css
-*/
+
 
 $container-width: 966px;
 
 $small-link: 12px;
 
 @mixin rounder($side, $radius: 10px) {
-	@if $side == all {
-		-webkit-border-radius: $radius;
-		-moz-border-radius: $radius;
-		border-radius: $radius;
-	}
+  @if $side == all {
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+    }
 
-	@if $side != all {
-		border-#{$side}-radius: $radius;
-		-moz-border-radius-#{$side}: $radius;
-		-webkit-border-#{$side}-radius: $radius;
-	}
-}
-
-@mixin wrapper-container {
-	margin:0 auto;
-	width: $container-width;
-}
-
-@mixin section {
-	height: 50px;
-}
-
-body{
-	margin:0px;
-	background:url("pb/noise.png");
-	font-family: verdana,'Ubuntu', arial, serif;
-
-    #fancybox-wrap{
-      z-index: 9999999;
-
+  @if $side != all {
+        border-#{$side}-radius: $radius;
+        -moz-border-radius-#{$side}: $radius;
+        -webkit-border-#{$side}-radius: $radius;
     }
 }
 
+@mixin wrapper-container {
+  margin:0 auto;
+  width: $container-width;
+}
 
+@mixin section {
+  height: 50px;
+}
+
+body{
+  margin:0px;
+  background:url("pb/noise.png");
+  font-family: verdana,'Ubuntu', arial, serif;
+}
 
 #top_header{
   width:100%;
@@ -174,7 +159,7 @@ body{
 
 
       ul{
-
+        overflow:hidden;
         list-style: none;
         color: #585d24;
         margin:0;
@@ -189,6 +174,7 @@ body{
           padding-right:20px;
           border-left:1px solid #000000;
           border-right:1px solid #f7eea8;
+          overflow:hidden;
           display:block;
 
 
@@ -201,23 +187,8 @@ body{
             top:25px;
             text-shadow:0px 1px 0px #fbf3b9;
           }
-          div{
-            width:150px;
-            height:200px;
-            display: block;
-            background-color:black;
-            z-index:999999;
-            float:left;
-            position:absolute;
-            margin-top:55px;
-            margin-left:-21px;
-            border-bottom-left-radius: .5em;
-            border-bottom-right-radius: .5em;
-            opacity:0;
 
-          }
         }
-
 
         #last{
           border-right:0px;
@@ -321,195 +292,195 @@ body{
 }
 
 #page-info {
-	background: url("pb/tabs-divider.png") repeat-x bottom center;
-	height:120px;
-	#title {
-		display: block;
-		float: left;
-		font-size: 30px;
-		line-height: 103px;
-		margin-left: 30px;
-		text-shadow: 1px 1px rgba(255, 255, 255, 1);
-		color: #51565B;
-	}
-	#desc {
-		display: block;
-		float: left;
-		margin-left: 30px;
-		font-size: 14px;
-		margin-top: 4px;
-		line-height: 103px;
-		color: #929191;
-		font-style: italic;
-		text-shadow: 1px 1px rgba(255, 255, 255, 1);
-	}
+  background: url("pb/tabs-divider.png") repeat-x bottom center;
+  height:120px;
+  #title {
+    display: block;
+    float: left;
+    font-size: 30px;
+    line-height: 103px;
+    margin-left: 30px;
+    text-shadow: 1px 1px rgba(255, 255, 255, 1);
+    color: #51565B;
+  }
+  #desc {
+    display: block;
+    float: left;
+    margin-left: 30px;
+    font-size: 14px;
+    margin-top: 4px;
+    line-height: 103px;
+    color: #929191;
+    font-style: italic;
+    text-shadow: 1px 1px rgba(255, 255, 255, 1);
+  }
 }
 
 div#each{
-	float:left;
-	padding-right:12px;
-	margin-top:20px;
-	.thumbnail-wrapper {
-		width:200px;
-		height:114px;
-		position:relative;
-		p.item-description {
-			font-size: 10px;
-			margin-top: 1px;
-		}
-		.item-title-wrapper {
-			position:absolute;
-			bottom:0;
-			width:100%;
-			vertical-align:baseline;
-			p.item-title {
-				border: 1px solid #999;
-				padding: 5px 0px 5px 7px;
-				background: #333;
-				color: white;
-				width: 191px;
-				font-size: 11px;
-				display: block;
-				margin-bottom: 0px;
-			}
-		}
-	}
+  float:left;
+  padding-right:12px;
+  margin-top:20px;
+  .thumbnail-wrapper {
+    width:200px;
+    height:114px;
+    position:relative;
+    p.item-description {
+      font-size: 10px;
+      margin-top: 1px;
+    }
+    .item-title-wrapper {
+      position:absolute;
+      bottom:0;
+      width:100%;
+      vertical-align:baseline;
+      p.item-title {
+        border: 1px solid #999;
+        padding: 5px 0px 5px 7px;
+        background: #333;
+        color: white;
+        width: 191px;
+        font-size: 11px;
+        display: block;
+        margin-bottom: 0px;
+      }
+    }
+  }
 }
 
 #wrapper {
   margin-top:130px;
 
-	#container {
-		@include wrapper-container;
-		.ads {
-			float:right;
-		}
-		#flash {
-			width:100%;
-			margin-top:20px;
-			span {
-				padding:5px;
-			}
-				.alert {
-					color: #ff9999;
-				}
-				.notice {
-					color: #99DD99;
-				}
-		}
-	}
-	#twitter-wrapper {
-		margin-top: 50px;
-		background: #f2f1f1;
-		height: 80px;
-		width: 100%;
-		background: #f2f1f1 url(pb/twitter-border.png) repeat-x;	
+  #container {
+    @include wrapper-container;
+    .ads {
+      float:right;
+    }
+    #flash {
+      width:100%;
+      margin-top:20px;
+      span {
+        padding:5px;
+      }
+      .alert {
+        color: #ff9999;
+      }
+      .notice {
+        color: #99DD99;
+      }
+    }
+  }
+  #twitter-wrapper {
+    margin-top: 50px;
+    background: #f2f1f1;
+    height: 80px;
+    width: 100%;
+    background: #f2f1f1 url(pb/twitter-border.png) repeat-x;
 
-		#twitter-container {
-			width:966px;
-			margin: 0 auto;
+    #twitter-container {
+      width:966px;
+      margin: 0 auto;
 
-			#tweets {
-				font-size: 16px;
-				line-height: 1.5em;
-				font-style: italic;
-				color: #838383;
+      #tweets {
+        font-size: 16px;
+        line-height: 1.5em;
+        font-style: italic;
+        color: #838383;
 
-				a{
-					text-decoration: none;
-					color: #CCC;
-				}
+        a{
+          text-decoration: none;
+          color: #CCC;
+        }
 
-				width:600px;
-				float:left;
-				height: 77px;
-				position:relative;
-				ul {
-					li {
-						list-style-type:none;
+        width:600px;
+        float:left;
+        height: 77px;
+        position:relative;
+        ul {
+          li {
+            list-style-type:none;
 
-					}
-				}
-			}
+          }
+        }
+      }
 
-			#left-anchor {
-				width: 30px;
-				background: transparent url(pb/prev-arrow.png) no-repeat top left;
-				float:left;
-				height: 77px;
-				position:relative;
-				top:20px;
-			}
-		
-			#twitter-logo {
-				width: 89px;
-				background: transparent url(pb/bird.png) no-repeat top left;
-				float:left;
-				height: 77px;
-			}
+      #left-anchor {
+        width: 30px;
+        background: transparent url(pb/prev-arrow.png) no-repeat top left;
+        float:left;
+        height: 77px;
+        position:relative;
+        top:20px;
+      }
 
-			#right-anchor {
-				width: 30px;
-				background: transparent url(pb/next-arrow.png) no-repeat top left;
-				float:right;
-				height: 77px;
-				position:relative;
-				top:20px;
-			}
-		}
-	}
-	#footer {
-		background:#2a2d30;
-		color: #ffffff;
-		height:338px;
-		#inside_footer {
-			@include wrapper-container;
+      #twitter-logo {
+        width: 89px;
+        background: transparent url(pb/bird.png) no-repeat top left;
+        float:left;
+        height: 77px;
+      }
 
-			#panels {
-				#links {
-					h2 {
-						color: #d7d7d7;
-						margin-top:30px;
-						margin-bottom:20px;
-						line-height:1.4em;
-						font-weight:lighter;
-						font-size:20px;
-					}
-					float:left;
-					width:48%;
-					ul.link {
-						padding:0px;
-						display:block;
-						list-style:none;
-						li.item {
-							line-height:1.7em;
-							padding-left:17px;
-							border-bottom: 1px solid #000000;
-							border-top:1px solid #4a4a4a;
-							background: url(pb/footer-bullet.png) no-repeat 0px 10px;
-							a {
-								font-size:12px;
-								text-decoration:none;
-								color: #bbbaba;
-							}
-						}
-					}
-				}
-				#welikeyou {
-					h2 {
-						color: #d7d7d7;
-						margin-top:30px;
-						margin-bottom:20px;
-						line-height:1.4em;
-						font-weight:lighter;
-						font-size:20px;
-					}
-					float:right;
-					width:48%;
-				}
-			}
-		}
-	}
+      #right-anchor {
+        width: 30px;
+        background: transparent url(pb/next-arrow.png) no-repeat top left;
+        float:right;
+        height: 77px;
+        position:relative;
+        top:20px;
+      }
+    }
+  }
+  #footer {
+    background:#2a2d30;
+    color: #ffffff;
+    height:338px;
+    #inside_footer {
+      @include wrapper-container;
+
+      #panels {
+        #links {
+          h2 {
+            color: #d7d7d7;
+            margin-top:30px;
+            margin-bottom:20px;
+            line-height:1.4em;
+            font-weight:lighter;
+            font-size:20px;
+          }
+          float:left;
+          width:48%;
+          ul.link {
+            padding:0px;
+            display:block;
+            list-style:none;
+            li.item {
+              line-height:1.7em;
+              padding-left:17px;
+              border-bottom: 1px solid #000000;
+              border-top:1px solid #4a4a4a;
+              background: url(pb/footer-bullet.png) no-repeat 0px 10px;
+              a {
+                font-size:12px;
+                text-decoration:none;
+                color: #bbbaba;
+              }
+            }
+          }
+        }
+        #welikeyou {
+          h2 {
+            color: #d7d7d7;
+            margin-top:30px;
+            margin-bottom:20px;
+            line-height:1.4em;
+            font-weight:lighter;
+            font-size:20px;
+          }
+          float:right;
+          width:48%;
+        }
+      }
+    }
+  }
 }
 #footer2{
   width:100%;
@@ -578,29 +549,29 @@ select{
 }
 
 p.time-ago {
-	font-style:italic;
-	color: #00bbbb;
-	font-size:10px
+  font-style:italic;
+  color: #00bbbb;
+  font-size:10px
 }
 a {
-	text-decoration:none;
+  text-decoration:none;
 }
 .myPeekButton {
   border-radius: 0px;
-	background: url(myPeekButton.png) no-repeat center top;
-	width: 72px;
-	height:21px;
+  background: url(myPeekButton.png) no-repeat center top;
+  width: 72px;
+  height:21px;
 }
 .unPeekButton {
   border-radius: 0px;
-	background: url(unPeekButton.png) no-repeat center top;
-	width: 72px;
-	height:21px;
+  background: url(unPeekButton.png) no-repeat center top;
+  width: 72px;
+  height:21px;
 }
 
 textarea {
-	width: 285px;
-	height: 130px;
+  width: 285px;
+  height: 130px;
   margin: 0px 0px 10px 0px;
   padding: 0px 8px 8px 8px;
 }

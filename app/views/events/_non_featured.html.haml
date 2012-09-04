@@ -2,7 +2,19 @@
   -@events.each do |event|
     - if event.image?
       %li
-        = link_to (image_tag event.image_url(:event_page)),  event_path(event)#, :title=>truncate(event.description, :length => 120, :omission => "..."),:alt=>"Click the thumbnail to see more"
+        %div.title-strip2
+          =truncate(event.title, :length => 26, :omission => "...")
+        %img{:height => "129", :width => "160",:src=>event.image_url(:event_page),:class=>"d1"}
+        .contenthover
+          %p
+            //=simple_format(truncate(event.description, :length => 90, :omission => "..."))
+            =truncate(event.description, :length => 90, :omission => "...")
+          %b
+            = link_to "Read more", event_path(event), :id=>"read-more2"
+
+
+
+        //= link_to (image_tag event.image_url(:event_page)),  event_path(event)#, :title=>truncate(event.description, :length => 120, :omission => "..."),:alt=>"Click the thumbnail to see more"
     - else
       %li
-        = link_to (image_tag "no-profile-pic.jpg"), event_path(event)
+        = link_to (image_tag "events/default_thumbnail.jpg"), event_path(event)

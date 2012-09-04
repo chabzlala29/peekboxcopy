@@ -1,6 +1,18 @@
 =form_for @banner, :url => admin_event_banner_index_path do |banner|
-	%label{:for => "image"} Banner Image:
-	%br
-	= banner.file_field :image
-	%br
-	= submit_tag "Add Banner"
+   %label{:for => "title"} Title:
+   %br
+   = banner.text_field :title
+   %br
+   %label{:for => "desc"} Description:
+   %br
+   = banner.text_area :desc
+   %br
+   %label{:for => "image"} Banner Image:
+   %br
+   = banner.file_field :image
+   %br
+   = submit_tag "Add Banner"
+
+
+
+

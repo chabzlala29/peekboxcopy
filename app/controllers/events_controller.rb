@@ -10,4 +10,9 @@ class EventsController < ApplicationController
 		@event = Event.find_by_id(params[:id])
   end
 
+  def show_to
+    @event = EventBanner.find(params[:id])
+
+  end
+
 end

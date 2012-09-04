@@ -1,0 +1,52 @@
+!!! 5
+%head
+	%title
+		Peekbox
+	= stylesheet_link_tag "main_events","events"
+	= javascript_include_tag "application"
+	= javascript_include_tag "http://w.sharethis.com/button/buttons.js"
+	= javascript_include_tag "events.js.coffee"
+	%script
+		stLight.options({publisher: "72a43595-432b-46cd-8d15-3b49d08b3be2"});
+	= csrf_meta_tags
+	= favicon_link_tag "/assets/favicon.jpg"
+
+	-if :meta_tags?
+		=yield :meta_tags if :meta_tags?
+	-else
+		%meta{:name => "title", :description => "Peekbox.tv - Share  and Socialize"}
+		%meta{:name => "description", :description => "Connect with Peekbox.tv users to enjoy exclusive videos, tv shows and upcoming events streamed online"}
+		%meta{:name => "keywords", :description => "Connect with Peekbox.tv users to enjoy exclusive videos, tv shows and upcoming events streamed online"}
+	%script{:type => "text/javascript"}
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-26950680-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+%body
+
+	= render :partial => "layouts/header"
+
+	%div#wrapper
+		#container_wide
+			#container
+				%div#flash
+					%span.notice
+						= notice
+					%span.alert
+						= alert
+				%br{:style => "clear:both;"}
+				= yield
+				%br{:style => "clear:both"}
+		= render :partial => "layouts/twitter"
+		= render :partial => "layouts/footer"
+		%script{:type => "text/javascript"}
+			$(function() {
+			$('#tweets').tweets({username:'peekbox', cycle:true});
+			});
+	= render :partial => "layouts/bottom"
+
