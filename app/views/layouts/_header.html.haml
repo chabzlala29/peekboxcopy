@@ -36,21 +36,52 @@
             %span
               Home
             %div
+
         = link_to videos_path do
-          %li
+          %li{:onmouseout => "document.getElementById('sub_item').style.display = 'none';", :onmouseover => "document.getElementById('sub_item').style.display = 'block';"}
             %span
               Videos
-            %div
+            %div{:id => "sub_item"}
+              %ul.sublist
+                = link_to profile_video_bookmark_index_path do
+                  %li.list_item My Peek
+
+                = link_to profile_videos_path do
+                  %li.list_item View Videos
+
+                = link_to new_profile_video_path do
+                  %li.list_item Add Video
+
         = link_to albums_path do
-          %li
+          %li{:onmouseout => "document.getElementById('sub_item2').style.display = 'none';", :onmouseover => "document.getElementById('sub_item2').style.display = 'block';"}
             %span
               Gallery
-            %div
+            %div{:id => "sub_item2"}
+              %ul.sublist2
+                = link_to profile_picture_bookmark_index_path do
+                  %li.list_item2 My Peek
+
+                = link_to profile_albums_path do
+                  %li.list_item2 View Albums
+
+                = link_to new_profile_album_path do
+                  %li.list_item2 Add Photos
+
         = link_to events_path do
-          %li
+          %li{:onmouseout => "document.getElementById('sub_item3').style.display = 'none';", :onmouseover => "document.getElementById('sub_item3').style.display = 'block';"}
             %span
               Events
-            %div
+            %div{:id => "sub_item3"}
+              %ul.sublist3
+                = link_to profile_bookmark_index_path do
+                  %li.list_item3 My Peek
+
+                = link_to profile_events_path do
+                  %li.list_item3 View Events
+
+                = link_to new_profile_event_path do
+                  %li.list_item3 Add Events
+
         %a{:href => "http://pilipinasproductions.com", :target => "_blank"}
           %li#last
             %span
